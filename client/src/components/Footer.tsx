@@ -4,7 +4,7 @@
  * Dark navy background, amber accents, clean column layout
  */
 
-import { ChevronRight, Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { ChevronRight, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   const handleNavClick = (href: string) => {
@@ -33,22 +33,7 @@ export default function Footer() {
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               Helping entrepreneurs establish their businesses properly and get them funding-ready. Your success is our mission.
             </p>
-            <div className="flex gap-3">
-              {[
-                { icon: Facebook, href: "#" },
-                { icon: Instagram, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Twitter, href: "#" },
-              ].map(({ icon: Icon, href }, i) => (
-                <a
-                  key={i}
-                  href={href}
-                  className="w-9 h-9 border border-white/20 flex items-center justify-center text-white/60 hover:border-[oklch(0.72_0.17_70)] hover:text-[oklch(0.72_0.17_70)] transition-all duration-200"
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
-            </div>
+
           </div>
 
           {/* Services Column */}
