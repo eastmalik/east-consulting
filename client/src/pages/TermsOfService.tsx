@@ -209,7 +209,7 @@ export default function TermsOfService() {
               </p>
               <div className="bg-[oklch(0.18_0.06_255)] p-6 text-white">
                 <p className="font-['Barlow_Condensed'] font-bold text-lg uppercase tracking-wide mb-3">East Consulting LLC</p>
-                <p className="text-white/70 text-sm mb-1">Email: <a href="mailto:info@eastconsultingllc.com" className="text-[oklch(0.72_0.17_70)] hover:underline">info@eastconsultingllc.com</a></p>
+                <p className="text-white/70 text-sm mb-1">Email: <a href="mailto:eastm65@gmail.com" className="text-[oklch(0.72_0.17_70)] hover:underline">eastm65@gmail.com</a></p>
                 <p className="text-white/70 text-sm">United States</p>
               </div>
             </section>

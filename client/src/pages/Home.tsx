@@ -634,7 +634,7 @@ function ContactSection() {
                 {
                   icon: Mail,
                   title: "Email Us",
-                  detail: "info@eastconsultingllc.com",
+                  detail: "eastm65@gmail.com",
                 },
               ].map(({ icon: Icon, title, detail }) => (
                 <div key={title} className="flex items-center gap-4">
