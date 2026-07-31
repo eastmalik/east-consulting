@@ -157,38 +157,6 @@ function HeroSection() {
   );
 }
 
-// ─── Stats Section ───────────────────────────────────────────────────────────
-function StatsSection() {
-  const stats = [
-    { value: 500, suffix: "+", label: "Entrepreneurs Guided" },
-    { value: 90, suffix: "-Day", prefix: "", label: "Proven Launch System" },
-    { value: 100, suffix: "%", label: "Funding-Ready Framework" },
-    { value: 6, suffix: " Steps", label: "To Business Credit" },
-  ];
-
-  return (
-    <section className="bg-[oklch(0.98_0.005_80)] py-16">
-      <div className="container">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, i) => (
-            <div
-              key={i}
-              className={`reveal stagger-${i + 1} text-center lg:text-left border-l-2 border-[oklch(0.72_0.17_70)] pl-5`}
-            >
-              <div className="font-['Barlow_Condensed'] font-bold text-4xl lg:text-5xl text-[oklch(0.18_0.06_255)] leading-none mb-1">
-                <AnimatedCounter end={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
-              </div>
-              <div className="text-[oklch(0.55_0.01_255)] text-sm font-['Source_Sans_3'] uppercase tracking-wide">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 // ─── Services Section ─────────────────────────────────────────────────────────
 function ServicesSection() {
   const services = [
@@ -837,7 +805,6 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <StatsSection />
         <ServicesSection />
         <ProcessSection />
         <AboutSection />
