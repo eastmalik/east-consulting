@@ -5,6 +5,7 @@
  */
 
 import { ChevronRight, Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Footer() {
   const handleNavClick = (href: string) => {
@@ -141,15 +142,12 @@ export default function Footer() {
             © {new Date().getFullYear()} East Consulting LLC. All rights reserved.
           </p>
           <div className="flex gap-6">
-            {["Privacy Policy", "Terms of Service"].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-white/40 hover:text-[oklch(0.72_0.17_70)] text-xs transition-colors"
-              >
-                {item}
-              </a>
-            ))}
+                <Link href="/privacy-policy" className="text-white/40 hover:text-[oklch(0.72_0.17_70)] text-xs transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-of-service" className="text-white/40 hover:text-[oklch(0.72_0.17_70)] text-xs transition-colors">
+                Terms of Service
+              </Link>
           </div>
         </div>
       </div>
