@@ -117,12 +117,14 @@ export default function Footer() {
               <p className="text-white/80 text-sm font-['Barlow_Condensed'] font-semibold uppercase tracking-wide mb-2">
                 Ready to Get Started?
               </p>
-              <Link
-                href="/contact"
+              <a
+                href="https://api.leadconnectorhq.com/widget/booking/22Ig6MGZ2XELV3Qi9Zr3"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[oklch(0.72_0.17_70)] text-sm font-semibold hover:underline flex items-center gap-1"
               >
                 Book a Free Consultation <ChevronRight size={14} />
-              </Link>
+              </a>
             </div>
           </div>
 

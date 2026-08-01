@@ -221,12 +221,14 @@ export default function AboutUs() {
           <p className="text-[oklch(0.18_0.06_255)]/75 text-base mb-8 max-w-xl mx-auto">
             Book a free consultation and let's map out exactly what your business needs to become funding-ready.
           </p>
-          <Link
-            href="/contact"
+          <a
+            href="https://api.leadconnectorhq.com/widget/booking/22Ig6MGZ2XELV3Qi9Zr3"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[oklch(0.18_0.06_255)] text-white font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest px-8 py-4 hover:bg-[oklch(0.25_0.06_255)] transition-colors duration-200"
           >
             Book a Free Consultation <ChevronRight size={16} />
-          </Link>
+          </a>
         </div>
       </section>
 

@@ -5,7 +5,7 @@
 
 import { useEffect } from "react";
 import { Link } from "wouter";
-import { ChevronRight, Phone, Mail, Clock, CheckCircle2 } from "lucide-react";
+import { ChevronRight, Phone, Mail, Clock, CheckCircle2, CalendarDays } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -144,26 +144,29 @@ export default function ContactUs() {
               </div>
             </div>
 
-            {/* Right — GoHighLevel Form */}
-            <div>
-              <div className="bg-white">
-                <iframe
-                  src="https://api.leadconnectorhq.com/widget/form/tDLheLWGJli1VwLbzgLi"
-                  style={{ width: "100%", height: "600px", border: "none", borderRadius: "0px" }}
-                  id="inline-tDLheLWGJli1VwLbzgLi-contact"
-                  data-layout="{'id':'INLINE'}"
-                  data-trigger-type="alwaysShow"
-                  data-trigger-value=""
-                  data-activation-type="alwaysActivated"
-                  data-activation-value=""
-                  data-deactivation-type="neverDeactivate"
-                  data-deactivation-value=""
-                  data-form-name="Business Coaching"
-                  data-height="600"
-                  data-layout-iframe-id="inline-tDLheLWGJli1VwLbzgLi-contact"
-                  data-form-id="tDLheLWGJli1VwLbzgLi"
-                  title="Business Coaching"
-                />
+            {/* Right — Booking CTA Card */}
+            <div className="flex items-start justify-center">
+              <div className="bg-white/5 border border-white/10 p-10 text-center w-full">
+                <div className="w-16 h-16 bg-[oklch(0.72_0.17_70)]/15 flex items-center justify-center mx-auto mb-6">
+                  <CalendarDays size={32} className="text-[oklch(0.72_0.17_70)]" />
+                </div>
+                <h3 className="font-['Barlow_Condensed'] font-bold text-white text-3xl uppercase mb-3">
+                  Book Your Free Consultation
+                </h3>
+                <p className="text-white/60 text-sm leading-relaxed mb-8">
+                  Click below to choose a time that works for you. You'll be taken to our secure scheduling page — no forms to fill out here, just pick your slot and we'll take it from there.
+                </p>
+                <a
+                  href="https://api.leadconnectorhq.com/widget/booking/22Ig6MGZ2XELV3Qi9Zr3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-[oklch(0.72_0.17_70)] text-[oklch(0.12_0.04_255)] font-['Barlow_Condensed'] font-bold text-lg uppercase tracking-wider px-10 py-4 hover:bg-[oklch(0.82_0.17_70)] transition-colors duration-200 w-full justify-center"
+                >
+                  Schedule My Consultation <ChevronRight size={18} />
+                </a>
+                <p className="text-white/30 text-xs mt-5">
+                  You'll be taken to our secure booking page to select your preferred date &amp; time.
+                </p>
               </div>
             </div>
           </div>

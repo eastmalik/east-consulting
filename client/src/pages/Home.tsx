@@ -19,6 +19,7 @@ import {
   FileText,
   Phone,
   Mail,
+  CalendarDays,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -112,13 +113,15 @@ function HeroSection() {
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-4">
-            <button
-              onClick={() => handleNavClick("#contact")}
-              className="ec-btn-primary text-base px-8 py-4"
+            <a
+              href="https://api.leadconnectorhq.com/widget/booking/22Ig6MGZ2XELV3Qi9Zr3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ec-btn-primary text-base px-8 py-4 inline-flex items-center gap-2"
             >
               Book a Free Consultation
               <ChevronRight size={18} />
-            </button>
+            </a>
             <button
               onClick={() => handleNavClick("#services")}
               className="ec-btn-outline text-base px-8 py-4 border-white/40 text-white hover:border-[oklch(0.72_0.17_70)] hover:text-[oklch(0.72_0.17_70)] hover:bg-transparent"
@@ -376,26 +379,29 @@ function ContactSection() {
             </div>
           </div>
 
-          {/* GoHighLevel Form Side */}
-          <div className="reveal stagger-2">
-            <div className="bg-white">
-              <iframe
-                src="https://api.leadconnectorhq.com/widget/form/tDLheLWGJli1VwLbzgLi"
-                style={{ width: "100%", height: "600px", border: "none", borderRadius: "0px" }}
-                id="inline-tDLheLWGJli1VwLbzgLi"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="Business Coaching"
-                data-height="600"
-                data-layout-iframe-id="inline-tDLheLWGJli1VwLbzgLi"
-                data-form-id="tDLheLWGJli1VwLbzgLi"
-                title="Business Coaching"
-              />
+          {/* Booking CTA Card */}
+          <div className="reveal stagger-2 flex items-center justify-center">
+            <div className="bg-white/5 border border-white/10 p-10 text-center w-full max-w-md">
+              <div className="w-16 h-16 bg-[oklch(0.72_0.17_70)]/15 flex items-center justify-center mx-auto mb-6">
+                <CalendarDays size={32} className="text-[oklch(0.72_0.17_70)]" />
+              </div>
+              <h3 className="font-['Barlow_Condensed'] font-bold text-white text-3xl uppercase mb-3">
+                Book Your Free Consultation
+              </h3>
+              <p className="text-white/60 text-sm leading-relaxed mb-8">
+                Click below to schedule your free 30-minute business assessment. Choose a time that works for you — no pressure, no obligation.
+              </p>
+              <a
+                href="https://api.leadconnectorhq.com/widget/booking/22Ig6MGZ2XELV3Qi9Zr3"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[oklch(0.72_0.17_70)] text-[oklch(0.12_0.04_255)] font-['Barlow_Condensed'] font-bold text-lg uppercase tracking-wider px-10 py-4 hover:bg-[oklch(0.82_0.17_70)] transition-colors duration-200 w-full justify-center"
+              >
+                Schedule My Consultation <ChevronRight size={18} />
+              </a>
+              <p className="text-white/30 text-xs mt-5">
+                You'll be taken to our secure booking page to select your preferred date &amp; time.
+              </p>
             </div>
           </div>
         </div>
