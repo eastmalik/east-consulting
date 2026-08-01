@@ -149,7 +149,7 @@ export default function ContactUs() {
               <div className="bg-white">
                 <iframe
                   src="https://api.leadconnectorhq.com/widget/form/tDLheLWGJli1VwLbzgLi"
-                  style={{ width: "100%", height: "1020px", border: "none", borderRadius: "0px" }}
+                  style={{ width: "100%", height: "600px", border: "none", borderRadius: "0px" }}
                   id="inline-tDLheLWGJli1VwLbzgLi-contact"
                   data-layout="{'id':'INLINE'}"
                   data-trigger-type="alwaysShow"
@@ -159,7 +159,7 @@ export default function ContactUs() {
                   data-deactivation-type="neverDeactivate"
                   data-deactivation-value=""
                   data-form-name="Business Coaching"
-                  data-height="1020"
+                  data-height="600"
                   data-layout-iframe-id="inline-tDLheLWGJli1VwLbzgLi-contact"
                   data-form-id="tDLheLWGJli1VwLbzgLi"
                   title="Business Coaching"
