@@ -8,11 +8,6 @@ import { ChevronRight, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Footer() {
-  const handleNavClick = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <footer className="bg-[oklch(0.12_0.05_255)] text-white">
       {/* Main Footer */}
@@ -20,7 +15,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-5">
+            <Link href="/" className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 bg-[oklch(0.72_0.17_70)] flex items-center justify-center font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-xl">
                 EC
               </div>
@@ -30,11 +25,10 @@ export default function Footer() {
                 </span>
                 <span className="text-[oklch(0.72_0.17_70)] text-xs tracking-widest uppercase">LLC</span>
               </div>
-            </div>
+            </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               Helping entrepreneurs establish their businesses properly and get them funding-ready. Your success is our mission.
             </p>
-
           </div>
 
           {/* Services Column */}
@@ -44,21 +38,21 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                "Business Entity Formation",
-                "Business Credit Building",
-                "Funding Readiness Strategy",
-                "Market Positioning",
-                "Business Setup Consulting",
-                "90-Day Launch Program",
-              ].map((item) => (
-                <li key={item}>
-                  <button
-                    onClick={() => handleNavClick("#services")}
+                { label: "Business Entity Formation", href: "/services" },
+                { label: "Business Credit Building", href: "/services" },
+                { label: "Funding Readiness Strategy", href: "/services" },
+                { label: "Market Positioning", href: "/services" },
+                { label: "Business Setup Consulting", href: "/services" },
+                { label: "90-Day Launch Program", href: "/services" },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
                     className="text-white/60 hover:text-[oklch(0.72_0.17_70)] text-sm transition-colors duration-200 flex items-center gap-2 group"
                   >
                     <ChevronRight size={12} className="text-[oklch(0.72_0.17_70)] opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {item}
-                  </button>
+                    {label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -71,20 +65,21 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { label: "About Us", href: "#about" },
-                { label: "Our Process", href: "#process" },
-                { label: "Resources", href: "#resources" },
-                { label: "Contact Us", href: "#contact" },
-                { label: "Get Started", href: "#contact" },
+                { label: "Home", href: "/" },
+                { label: "About Us", href: "/about" },
+                { label: "Resources", href: "/resources" },
+                { label: "Contact Us", href: "/contact" },
+                { label: "Privacy Policy", href: "/privacy-policy" },
+                { label: "Terms of Service", href: "/terms-of-service" },
               ].map(({ label, href }) => (
                 <li key={label}>
-                  <button
-                    onClick={() => handleNavClick(href)}
+                  <Link
+                    href={href}
                     className="text-white/60 hover:text-[oklch(0.72_0.17_70)] text-sm transition-colors duration-200 flex items-center gap-2 group"
                   >
                     <ChevronRight size={12} className="text-[oklch(0.72_0.17_70)] opacity-0 group-hover:opacity-100 transition-opacity" />
                     {label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -107,12 +102,12 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={16} className="text-[oklch(0.72_0.17_70)] mt-0.5 shrink-0" />
-                <a
-                  href="tel:+1-800-000-0000"
+                <Link
+                  href="/contact"
                   className="text-white/60 hover:text-[oklch(0.72_0.17_70)] text-sm transition-colors"
                 >
                   Schedule a Consultation
-                </a>
+                </Link>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-[oklch(0.72_0.17_70)] mt-0.5 shrink-0" />
@@ -124,12 +119,12 @@ export default function Footer() {
               <p className="text-white/80 text-sm font-['Barlow_Condensed'] font-600 uppercase tracking-wide mb-2">
                 Ready to Get Started?
               </p>
-              <button
-                onClick={() => handleNavClick("#contact")}
+              <Link
+                href="/contact"
                 className="text-[oklch(0.72_0.17_70)] text-sm font-semibold hover:underline flex items-center gap-1"
               >
                 Book a Free Consultation <ChevronRight size={14} />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -142,12 +137,12 @@ export default function Footer() {
             © {new Date().getFullYear()} East Consulting LLC. All rights reserved.
           </p>
           <div className="flex gap-6">
-                <Link href="/privacy-policy" className="text-white/40 hover:text-[oklch(0.72_0.17_70)] text-xs transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms-of-service" className="text-white/40 hover:text-[oklch(0.72_0.17_70)] text-xs transition-colors">
-                Terms of Service
-              </Link>
+            <Link href="/privacy-policy" className="text-white/40 hover:text-[oklch(0.72_0.17_70)] text-xs transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-of-service" className="text-white/40 hover:text-[oklch(0.72_0.17_70)] text-xs transition-colors">
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>
