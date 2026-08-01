@@ -3,7 +3,7 @@
  * Design: Modern Momentum — Navy & Amber
  */
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { ChevronRight, Phone, Mail, Clock, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -13,25 +13,6 @@ export default function ContactUs() {
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, []);
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    business: "",
-    service: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
 
   const contactInfo = [
     {
@@ -62,16 +43,6 @@ export default function ContactUs() {
     "Customized roadmap for your situation",
     "Clear next steps to get funding-ready",
     "No pressure, no obligation",
-  ];
-
-  const services = [
-    "Business Entity Formation",
-    "Professional Business Setup",
-    "Business Credit Building",
-    "Funding Readiness Strategy",
-    "Market Positioning",
-    "90-Day Launch System",
-    "Other / Not Sure Yet",
   ];
 
   return (
@@ -173,118 +144,27 @@ export default function ContactUs() {
               </div>
             </div>
 
-            {/* Right — Form */}
+            {/* Right — GoHighLevel Form */}
             <div>
-              {submitted ? (
-                <div className="bg-white/5 border border-[oklch(0.72_0.17_70)]/40 p-10 flex flex-col items-center justify-center text-center h-full min-h-[500px]">
-                  <CheckCircle2 size={52} className="text-[oklch(0.72_0.17_70)] mb-5" />
-                  <h3 className="font-['Barlow_Condensed'] font-bold text-white text-2xl uppercase tracking-wide mb-3">
-                    Message Received!
-                  </h3>
-                  <p className="text-white/65 text-base leading-relaxed">
-                    Thank you for reaching out. A member of the East Consulting team will contact you within 24 hours to schedule your free consultation.
-                  </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="mt-8 text-[oklch(0.72_0.17_70)] text-sm font-semibold hover:underline"
-                  >
-                    Submit another inquiry
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="bg-white p-8 lg:p-10">
-                  <h3 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-xl uppercase tracking-wide mb-7">
-                    Book Your Free Consultation
-                  </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <label className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.35_0.04_255)] mb-1.5">Full Name *</label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full border border-[oklch(0.88_0.005_255)] px-4 py-3 text-sm text-[oklch(0.25_0.04_255)] focus:outline-none focus:border-[oklch(0.72_0.17_70)] transition-colors"
-                        placeholder="Your full name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.35_0.04_255)] mb-1.5">Email Address *</label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full border border-[oklch(0.88_0.005_255)] px-4 py-3 text-sm text-[oklch(0.25_0.04_255)] focus:outline-none focus:border-[oklch(0.72_0.17_70)] transition-colors"
-                        placeholder="your@email.com"
-                      />
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <label className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.35_0.04_255)] mb-1.5">Phone Number</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full border border-[oklch(0.88_0.005_255)] px-4 py-3 text-sm text-[oklch(0.25_0.04_255)] focus:outline-none focus:border-[oklch(0.72_0.17_70)] transition-colors"
-                        placeholder="(555) 000-0000"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.35_0.04_255)] mb-1.5">Business Name</label>
-                      <input
-                        type="text"
-                        name="business"
-                        value={formData.business}
-                        onChange={handleChange}
-                        className="w-full border border-[oklch(0.88_0.005_255)] px-4 py-3 text-sm text-[oklch(0.25_0.04_255)] focus:outline-none focus:border-[oklch(0.72_0.17_70)] transition-colors"
-                        placeholder="Your business name"
-                      />
-                    </div>
-                  </div>
-                  <div className="mb-4">
-                    <label className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.35_0.04_255)] mb-1.5">Service Interested In</label>
-                    <select
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full border border-[oklch(0.88_0.005_255)] px-4 py-3 text-sm text-[oklch(0.25_0.04_255)] focus:outline-none focus:border-[oklch(0.72_0.17_70)] transition-colors bg-white"
-                    >
-                      <option value="">Select a service...</option>
-                      {services.map((s) => (
-                        <option key={s} value={s}>{s}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="mb-6">
-                    <label className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.35_0.04_255)] mb-1.5">Tell Us About Your Business</label>
-                    <textarea
-                      name="message"
-                      rows={4}
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full border border-[oklch(0.88_0.005_255)] px-4 py-3 text-sm text-[oklch(0.25_0.04_255)] focus:outline-none focus:border-[oklch(0.72_0.17_70)] transition-colors resize-none"
-                      placeholder="Describe your business idea or current stage..."
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-[oklch(0.72_0.17_70)] text-[oklch(0.18_0.06_255)] font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest py-4 hover:bg-[oklch(0.65_0.18_70)] transition-colors duration-200 flex items-center justify-center gap-2"
-                  >
-                    Submit & Book Consultation <ChevronRight size={16} />
-                  </button>
-                  <p className="text-[oklch(0.55_0.01_255)] text-xs text-center mt-4">
-                    By submitting this form you agree to our{" "}
-                    <Link href="/privacy-policy" className="text-[oklch(0.72_0.17_70)] hover:underline">Privacy Policy</Link>{" "}
-                    and{" "}
-                    <Link href="/terms-of-service" className="text-[oklch(0.72_0.17_70)] hover:underline">Terms of Service</Link>.
-                  </p>
-                </form>
-              )}
+              <div className="bg-white">
+                <iframe
+                  src="https://api.leadconnectorhq.com/widget/form/tDLheLWGJli1VwLbzgLi"
+                  style={{ width: "100%", height: "1020px", border: "none", borderRadius: "0px" }}
+                  id="inline-tDLheLWGJli1VwLbzgLi-contact"
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="Business Coaching"
+                  data-height="1020"
+                  data-layout-iframe-id="inline-tDLheLWGJli1VwLbzgLi-contact"
+                  data-form-id="tDLheLWGJli1VwLbzgLi"
+                  title="Business Coaching"
+                />
+              </div>
             </div>
           </div>
         </div>
