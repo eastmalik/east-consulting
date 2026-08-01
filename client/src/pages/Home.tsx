@@ -192,15 +192,15 @@ function ServicesSection() {
       icon: Target,
       title: "Market Positioning",
       description:
-        "Understand who your real customer is, what problem you're truly solving, and how to position your offer for maximum revenue. We help you validate your market before you invest heavily.",
+        "Understand who your real customer is, what problem you're truly solving, and how to position your offer for maximum capital. We help you validate your market before you invest heavily.",
       features: ["Real customer identification", "Core problem articulation", "Value proposition development", "Market validation research"],
     },
     {
       icon: Briefcase,
       title: "Business Launch Consulting",
       description:
-        "From idea to market in 90 days. We provide a structured roadmap to take your business from concept to operational — with the right platforms, tools, and strategies to generate revenue quickly.",
-      features: ["90-day launch roadmap", "Platform selection guidance", "Revenue model development", "Launch execution support"],
+        "From idea to market in 90 days. We provide a structured roadmap to take your business from concept to operational — with the right platforms, tools, and strategies to generate capital quickly.",
+      features: ["90-day launch roadmap", "Platform selection guidance", "Capital model development", "Launch execution support"],
     },
   ];
 

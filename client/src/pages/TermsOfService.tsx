@@ -156,7 +156,7 @@ export default function TermsOfService() {
               </p>
               <ul className="space-y-2 text-sm mb-3">
                 {[
-                  "Loss of profits, revenue, or business opportunities",
+                  "Loss of profits, capital, or business opportunities",
                   "Failure to obtain business credit, loans, or funding",
                   "Decisions made based on our educational guidance",
                   "Errors or omissions in any information provided",
