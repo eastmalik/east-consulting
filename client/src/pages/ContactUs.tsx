@@ -18,9 +18,9 @@ export default function ContactUs() {
     {
       icon: Mail,
       title: "Email Us",
-      detail: "eastm65@gmail.com",
+      detail: "support@eastconsultingllc.com",
       sub: "We respond within 24 hours",
-      href: "mailto:eastm65@gmail.com",
+      href: "mailto:support@eastconsultingllc.com",
     },
     {
       icon: Phone,

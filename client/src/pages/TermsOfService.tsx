@@ -222,7 +222,7 @@ export default function TermsOfService() {
                 <p className="font-semibold text-[oklch(0.18_0.06_255)] text-sm uppercase tracking-wide mb-2">12.2 — Opt-Out &amp; Support Instructions</p>
                 <p className="text-sm leading-relaxed text-[oklch(0.35_0.04_255)]">
                   You can cancel the SMS service at any time. Just text &ldquo;STOP&rdquo; to the number from which you received the message. After you send the SMS message &ldquo;STOP&rdquo; to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time and we will start sending SMS messages to you again. If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or you can get help directly at{" "}
-                  <a href="mailto:eastm65@gmail.com" className="text-[oklch(0.72_0.17_70)] hover:underline">eastm65@gmail.com</a>.
+                  <a href="mailto:support@eastconsultingllc.com" className="text-[oklch(0.72_0.17_70)] hover:underline">support@eastconsultingllc.com</a>.
                 </p>
               </div>
 
@@ -261,7 +261,7 @@ export default function TermsOfService() {
               </p>
               <div className="bg-[oklch(0.18_0.06_255)] p-6 text-white">
                 <p className="font-['Barlow_Condensed'] font-bold text-lg uppercase tracking-wide mb-3">East Consulting LLC</p>
-                <p className="text-white/70 text-sm mb-1">Email: <a href="mailto:eastm65@gmail.com" className="text-[oklch(0.72_0.17_70)] hover:underline">eastm65@gmail.com</a></p>
+                <p className="text-white/70 text-sm mb-1">Email: <a href="mailto:support@eastconsultingllc.com" className="text-[oklch(0.72_0.17_70)] hover:underline">support@eastconsultingllc.com</a></p>
                 <p className="text-white/70 text-sm">United States</p>
               </div>
             </section>
