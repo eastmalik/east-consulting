@@ -17,9 +17,11 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 bg-[oklch(0.72_0.17_70)] flex items-center justify-center font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-xl">
-                EC
-              </div>
+              <img
+                src="/manus-storage/favicon-logo-transparent_ff591822.png"
+                alt="East Consulting LLC Logo"
+                className="w-10 h-10 object-contain"
+              />
               <div className="flex flex-col leading-none">
                 <span className="font-['Barlow_Condensed'] font-bold text-white text-lg uppercase tracking-wide">
                   East Consulting

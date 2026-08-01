@@ -54,9 +54,11 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 bg-[oklch(0.72_0.17_70)] flex items-center justify-center font-['Barlow_Condensed'] font-800 text-[oklch(0.18_0.06_255)] text-xl leading-none">
-                EC
-              </div>
+              <img
+                src="/manus-storage/favicon-logo-transparent_ff591822.png"
+                alt="East Consulting LLC Logo"
+                className="w-10 h-10 object-contain"
+              />
               <div className="flex flex-col leading-none">
                 <span className="font-['Barlow_Condensed'] font-bold text-white text-lg tracking-wide uppercase">
                   East Consulting
