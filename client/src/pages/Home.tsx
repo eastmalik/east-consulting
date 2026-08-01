@@ -19,7 +19,6 @@ import {
   FileText,
   Phone,
   Mail,
-  Send,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -314,21 +313,6 @@ function WhySection() {
 
 // ─── Contact Section ──────────────────────────────────────────────────────────
 function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    business: "",
-    service: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <section id="contact" className="py-20 lg:py-28 bg-[oklch(0.18_0.06_255)]">
       <div className="container">
@@ -392,123 +376,27 @@ function ContactSection() {
             </div>
           </div>
 
-          {/* Form Side */}
+          {/* GoHighLevel Form Side */}
           <div className="reveal stagger-2">
-            {submitted ? (
-              <div className="bg-white/5 border border-[oklch(0.72_0.17_70)]/40 p-10 flex flex-col items-center justify-center text-center h-full min-h-[400px]">
-                <CheckCircle2 size={48} className="text-[oklch(0.72_0.17_70)] mb-5" />
-                <h3 className="font-['Barlow_Condensed'] font-bold text-white text-2xl uppercase tracking-wide mb-3">
-                  Message Received!
-                </h3>
-                <p className="text-white/65 text-base">
-                  Thank you for reaching out. A member of the East Consulting team will contact you within 24 hours to schedule your free consultation.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="bg-white p-8 lg:p-10">
-                <h3 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-xl uppercase tracking-wide mb-6">
-                  Book Your Free Consultation
-                </h3>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.35_0.04_255)] mb-1.5">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full border border-[oklch(0.88_0.005_255)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.72_0.17_70)] transition-colors"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.35_0.04_255)] mb-1.5">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full border border-[oklch(0.88_0.005_255)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.72_0.17_70)] transition-colors"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.35_0.04_255)] mb-1.5">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full border border-[oklch(0.88_0.005_255)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.72_0.17_70)] transition-colors"
-                      placeholder="(000) 000-0000"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.35_0.04_255)] mb-1.5">
-                      Business Name
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.business}
-                      onChange={(e) => setFormData({ ...formData, business: e.target.value })}
-                      className="w-full border border-[oklch(0.88_0.005_255)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.72_0.17_70)] transition-colors"
-                      placeholder="Your business name"
-                    />
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <label className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.35_0.04_255)] mb-1.5">
-                    Service Interested In
-                  </label>
-                  <select
-                    value={formData.service}
-                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full border border-[oklch(0.88_0.005_255)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.72_0.17_70)] transition-colors bg-white text-[oklch(0.35_0.04_255)]"
-                  >
-                    <option value="">Select a service...</option>
-                    <option value="entity">Business Entity Formation</option>
-                    <option value="setup">Professional Business Setup</option>
-                    <option value="credit">Business Credit Building</option>
-                    <option value="funding">Funding Readiness Strategy</option>
-                    <option value="market">Market Positioning</option>
-                    <option value="launch">Business Launch Consulting</option>
-                    <option value="full">Full 90-Day Program</option>
-                  </select>
-                </div>
-
-                <div className="mb-6">
-                  <label className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.35_0.04_255)] mb-1.5">
-                    Tell Us About Your Business
-                  </label>
-                  <textarea
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full border border-[oklch(0.88_0.005_255)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.72_0.17_70)] transition-colors resize-none"
-                    placeholder="Briefly describe your business idea or current stage..."
-                  />
-                </div>
-
-                <button type="submit" className="ec-btn-primary w-full justify-center text-base py-4">
-                  Send My Request
-                  <Send size={16} />
-                </button>
-
-                <p className="text-[oklch(0.55_0.01_255)] text-xs mt-4 text-center">
-                  We respond within 24 hours. Your information is kept strictly confidential.
-                </p>
-              </form>
-            )}
+            <div className="bg-white">
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/tDLheLWGJli1VwLbzgLi"
+                style={{ width: "100%", height: "1020px", border: "none", borderRadius: "0px" }}
+                id="inline-tDLheLWGJli1VwLbzgLi"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Business Coaching"
+                data-height="1020"
+                data-layout-iframe-id="inline-tDLheLWGJli1VwLbzgLi"
+                data-form-id="tDLheLWGJli1VwLbzgLi"
+                title="Business Coaching"
+              />
+            </div>
           </div>
         </div>
       </div>
