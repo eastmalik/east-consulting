@@ -13,6 +13,7 @@ export default function Footer() {
       {/* Main Footer */}
       <div className="container py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5">
@@ -26,24 +27,22 @@ export default function Footer() {
                 <span className="text-[oklch(0.72_0.17_70)] text-xs tracking-widest uppercase">LLC</span>
               </div>
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed mb-6">
+            <p className="text-white/60 text-sm leading-relaxed">
               Helping entrepreneurs establish their businesses properly and get them funding-ready. Your success is our mission.
             </p>
           </div>
 
-          {/* Services Column */}
+          {/* Quick Links Column */}
           <div>
             <h4 className="font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest text-[oklch(0.72_0.17_70)] mb-5">
-              Services
+              Quick Links
             </h4>
             <ul className="space-y-3">
               {[
-                { label: "Business Entity Formation", href: "/services" },
-                { label: "Business Credit Building", href: "/services" },
-                { label: "Funding Readiness Strategy", href: "/services" },
-                { label: "Market Positioning", href: "/services" },
-                { label: "Business Setup Consulting", href: "/services" },
-                { label: "90-Day Launch Program", href: "/services" },
+                { label: "Home", href: "/" },
+                { label: "About Us", href: "/about" },
+                { label: "Resources", href: "/resources" },
+                { label: "Contact Us", href: "/contact" },
               ].map(({ label, href }) => (
                 <li key={label}>
                   <Link
@@ -58,17 +57,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links Column */}
+          {/* Legals Column */}
           <div>
             <h4 className="font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest text-[oklch(0.72_0.17_70)] mb-5">
-              Quick Links
+              Legals
             </h4>
             <ul className="space-y-3">
               {[
-                { label: "Home", href: "/" },
-                { label: "About Us", href: "/about" },
-                { label: "Resources", href: "/resources" },
-                { label: "Contact Us", href: "/contact" },
                 { label: "Privacy Policy", href: "/privacy-policy" },
                 { label: "Terms of Service", href: "/terms-of-service" },
               ].map(({ label, href }) => (
@@ -90,7 +85,7 @@ export default function Footer() {
             <h4 className="font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest text-[oklch(0.72_0.17_70)] mb-5">
               Contact
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-4 mb-6">
               <li className="flex items-start gap-3">
                 <Mail size={16} className="text-[oklch(0.72_0.17_70)] mt-0.5 shrink-0" />
                 <a
@@ -115,8 +110,8 @@ export default function Footer() {
               </li>
             </ul>
 
-            <div className="mt-6 p-4 border border-[oklch(0.72_0.17_70)]/30 bg-[oklch(0.72_0.17_70)]/5">
-              <p className="text-white/80 text-sm font-['Barlow_Condensed'] font-600 uppercase tracking-wide mb-2">
+            <div className="p-4 border border-[oklch(0.72_0.17_70)]/30 bg-[oklch(0.72_0.17_70)]/5">
+              <p className="text-white/80 text-sm font-['Barlow_Condensed'] font-semibold uppercase tracking-wide mb-2">
                 Ready to Get Started?
               </p>
               <Link
@@ -127,6 +122,7 @@ export default function Footer() {
               </Link>
             </div>
           </div>
+
         </div>
       </div>
 
