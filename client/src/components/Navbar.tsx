@@ -7,18 +7,20 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
+import { Link, useLocation } from "wouter";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
-  { label: "Resources", href: "#resources" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/#services", isAnchor: true },
+  { label: "Process", href: "/#process", isAnchor: true },
+  { label: "About", href: "/about", isAnchor: false },
+  { label: "Resources", href: "/resources", isAnchor: false },
+  { label: "Contact", href: "/contact", isAnchor: false },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -26,11 +28,21 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const handleAnchorClick = (href: string) => {
     setIsOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    const anchor = href.replace("/#", "#"); // "/#services" → "#services"
+    if (location === "/") {
+      const el = document.querySelector(anchor);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = href;
+    }
   };
+
+  const isActive = (href: string) =>
+    href === "/about" || href === "/resources" || href === "/contact"
+      ? location === href
+      : false;
 
   return (
     <>
@@ -44,11 +56,7 @@ export default function Navbar() {
         <div className="container">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-              className="flex items-center gap-3 group"
-            >
+            <Link href="/" className="flex items-center gap-3 group">
               <div className="w-10 h-10 bg-[oklch(0.72_0.17_70)] flex items-center justify-center font-['Barlow_Condensed'] font-800 text-[oklch(0.18_0.06_255)] text-xl leading-none">
                 EC
               </div>
@@ -60,31 +68,50 @@ export default function Navbar() {
                   LLC
                 </span>
               </div>
-            </a>
+            </Link>
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => handleNavClick(link.href)}
-                  className="font-['Barlow_Condensed'] font-600 text-sm tracking-widest uppercase text-white/80 hover:text-[oklch(0.72_0.17_70)] transition-colors duration-200 relative group"
-                >
-                  {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[oklch(0.72_0.17_70)] transition-all duration-200 group-hover:w-full" />
-                </button>
-              ))}
+              {navLinks.map((link) =>
+                link.isAnchor ? (
+                  <button
+                    key={link.href}
+                    onClick={() => handleAnchorClick(link.href)}
+                    className="font-['Barlow_Condensed'] font-600 text-sm tracking-widest uppercase text-white/80 hover:text-[oklch(0.72_0.17_70)] transition-colors duration-200 relative group"
+                  >
+                    {link.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[oklch(0.72_0.17_70)] transition-all duration-200 group-hover:w-full" />
+                  </button>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`font-['Barlow_Condensed'] font-600 text-sm tracking-widest uppercase transition-colors duration-200 relative group ${
+                      isActive(link.href)
+                        ? "text-[oklch(0.72_0.17_70)]"
+                        : "text-white/80 hover:text-[oklch(0.72_0.17_70)]"
+                    }`}
+                  >
+                    {link.label}
+                    <span
+                      className={`absolute -bottom-1 left-0 h-0.5 bg-[oklch(0.72_0.17_70)] transition-all duration-200 ${
+                        isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </Link>
+                )
+              )}
             </div>
 
             {/* Desktop CTA */}
             <div className="hidden lg:block">
-              <button
-                onClick={() => handleNavClick("#contact")}
-                className="ec-btn-primary text-sm"
+              <Link
+                href="/contact"
+                className="ec-btn-primary text-sm inline-flex items-center gap-2"
               >
                 Get Started
                 <ChevronRight size={16} />
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -107,25 +134,39 @@ export default function Navbar() {
       >
         <div className="flex flex-col h-full pt-20 px-6 pb-8">
           <nav className="flex flex-col gap-2 flex-1">
-            {navLinks.map((link, i) => (
-              <button
-                key={link.href}
-                onClick={() => handleNavClick(link.href)}
-                className="flex items-center justify-between py-4 border-b border-white/10 text-white font-['Barlow_Condensed'] font-600 text-2xl uppercase tracking-wider hover:text-[oklch(0.72_0.17_70)] transition-colors text-left"
-                style={{ transitionDelay: isOpen ? `${i * 50}ms` : "0ms" }}
-              >
-                {link.label}
-                <ChevronRight size={20} className="text-[oklch(0.72_0.17_70)]" />
-              </button>
-            ))}
+            {navLinks.map((link, i) =>
+              link.isAnchor ? (
+                <button
+                  key={link.href}
+                  onClick={() => handleAnchorClick(link.href)}
+                  className="flex items-center justify-between py-4 border-b border-white/10 text-white font-['Barlow_Condensed'] font-600 text-2xl uppercase tracking-wider hover:text-[oklch(0.72_0.17_70)] transition-colors text-left"
+                  style={{ transitionDelay: isOpen ? `${i * 50}ms` : "0ms" }}
+                >
+                  {link.label}
+                  <ChevronRight size={20} className="text-[oklch(0.72_0.17_70)]" />
+                </button>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-between py-4 border-b border-white/10 text-white font-['Barlow_Condensed'] font-600 text-2xl uppercase tracking-wider hover:text-[oklch(0.72_0.17_70)] transition-colors"
+                  style={{ transitionDelay: isOpen ? `${i * 50}ms` : "0ms" }}
+                >
+                  {link.label}
+                  <ChevronRight size={20} className="text-[oklch(0.72_0.17_70)]" />
+                </Link>
+              )
+            )}
           </nav>
-          <button
-            onClick={() => handleNavClick("#contact")}
-            className="ec-btn-primary w-full justify-center text-base mt-6"
+          <Link
+            href="/contact"
+            onClick={() => setIsOpen(false)}
+            className="ec-btn-primary w-full justify-center text-base mt-6 inline-flex items-center gap-2"
           >
             Get Started Today
             <ChevronRight size={18} />
-          </button>
+          </Link>
         </div>
       </div>
     </>
