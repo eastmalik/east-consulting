@@ -10,6 +10,7 @@ import { Menu, X, ChevronRight } from "lucide-react";
 import { Link, useLocation } from "wouter";
 
 const navLinks = [
+  { label: "Home", href: "/", isAnchor: false },
   { label: "Services", href: "/#services", isAnchor: true },
   { label: "Process", href: "/#process", isAnchor: true },
   { label: "About", href: "/about", isAnchor: false },
@@ -39,10 +40,7 @@ export default function Navbar() {
     }
   };
 
-  const isActive = (href: string) =>
-    href === "/about" || href === "/resources" || href === "/contact"
-      ? location === href
-      : false;
+  const isActive = (href: string) => location === href;
 
   return (
     <>
