@@ -5,7 +5,8 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsAndConditions from "@/pages/TermsAndConditions";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Resources from "./pages/Resources";
@@ -20,6 +21,7 @@ function Router() {
       <Route path={"/resources"} component={Resources} />
       <Route path={"/privacy-policy"} component={PrivacyPolicy} />
       <Route path={"/terms-of-service"} component={TermsOfService} />
+      <Route path={"/terms-and-conditions"} component={TermsAndConditions} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
