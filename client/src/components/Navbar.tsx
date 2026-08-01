@@ -12,7 +12,6 @@ import { Link, useLocation } from "wouter";
 const navLinks = [
   { label: "Home", href: "/", isAnchor: false },
   { label: "Services", href: "/#services", isAnchor: true },
-  { label: "Process", href: "/#process", isAnchor: true },
   { label: "About", href: "/about", isAnchor: false },
   { label: "Resources", href: "/resources", isAnchor: false },
   { label: "Contact", href: "/contact", isAnchor: false },
