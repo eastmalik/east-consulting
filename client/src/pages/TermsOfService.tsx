@@ -200,9 +200,61 @@ export default function TermsOfService() {
               </p>
             </section>
 
+            {/* A2P SMS Required Section */}
             <section>
               <h2 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-2xl uppercase tracking-wide mb-4 pb-2 border-b border-[oklch(0.88_0.005_255)]">
-                12. Contact Us
+                12. SMS Text Messaging Terms
+              </h2>
+              <p className="text-sm leading-relaxed mb-5">
+                East Consulting LLC operates an SMS messaging program to communicate with clients and prospective clients regarding appointment reminders, business coaching updates, and related non-marketing notifications. By providing your phone number and opting in, you agree to the following terms.
+              </p>
+
+              {/* Business Identity */}
+              <div className="mb-5">
+                <p className="font-semibold text-[oklch(0.18_0.06_255)] text-sm uppercase tracking-wide mb-2">12.1 — Business Identity</p>
+                <p className="text-sm leading-relaxed">
+                  SMS messages are sent by <strong>East Consulting LLC</strong>, a business development consulting company that helps entrepreneurs establish legally sound, credit-ready businesses positioned to attract investors and secure funding. Messages may include appointment confirmations, consultation reminders, service updates, and follow-up communications.
+                </p>
+              </div>
+
+              {/* Opt-Out & Support */}
+              <div className="bg-[oklch(0.72_0.17_70)]/10 border-l-4 border-[oklch(0.72_0.17_70)] p-5 mb-5">
+                <p className="font-semibold text-[oklch(0.18_0.06_255)] text-sm uppercase tracking-wide mb-2">12.2 — Opt-Out &amp; Support Instructions</p>
+                <p className="text-sm leading-relaxed text-[oklch(0.35_0.04_255)]">
+                  You can cancel the SMS service at any time. Just text &ldquo;STOP&rdquo; to the number from which you received the message. After you send the SMS message &ldquo;STOP&rdquo; to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time and we will start sending SMS messages to you again. If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or you can get help directly at{" "}
+                  <a href="mailto:eastm65@gmail.com" className="text-[oklch(0.72_0.17_70)] hover:underline">eastm65@gmail.com</a>.
+                </p>
+              </div>
+
+              {/* Carrier Liability */}
+              <div className="mb-5">
+                <p className="font-semibold text-[oklch(0.18_0.06_255)] text-sm uppercase tracking-wide mb-2">12.3 — Carrier Liability</p>
+                <p className="text-sm leading-relaxed">
+                  Carriers are not liable for delayed or undelivered messages.
+                </p>
+              </div>
+
+              {/* Message Frequency & Rates */}
+              <div className="bg-[oklch(0.72_0.17_70)]/10 border-l-4 border-[oklch(0.72_0.17_70)] p-5 mb-5">
+                <p className="font-semibold text-[oklch(0.18_0.06_255)] text-sm uppercase tracking-wide mb-2">12.4 — Message Frequency &amp; Rates</p>
+                <p className="text-sm leading-relaxed text-[oklch(0.35_0.04_255)]">
+                  As always, message and data rates may apply for any messages sent to you from us and to us from you. You will receive messages based on your consultation schedule and service engagement — message frequency may vary. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.
+                </p>
+              </div>
+
+              {/* Privacy Policy Cross-Link */}
+              <div className="mb-2">
+                <p className="font-semibold text-[oklch(0.18_0.06_255)] text-sm uppercase tracking-wide mb-2">12.5 — Privacy Policy</p>
+                <p className="text-sm leading-relaxed">
+                  If you have any questions regarding privacy, please read our privacy policy:{" "}
+                  <Link href="/privacy-policy" className="text-[oklch(0.72_0.17_70)] hover:underline font-medium">eastconsultingllc.com/privacy-policy</Link>.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-2xl uppercase tracking-wide mb-4 pb-2 border-b border-[oklch(0.88_0.005_255)]">
+                13. Contact Us
               </h2>
               <p className="text-sm leading-relaxed mb-4">
                 If you have any questions about these Terms of Service, please contact us:

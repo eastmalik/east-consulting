@@ -106,7 +106,7 @@ export default function PrivacyPolicy() {
               <p className="text-sm leading-relaxed mb-3">
                 We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following limited circumstances:
               </p>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2 text-sm mb-5">
                 {[
                   "With trusted service providers who assist us in operating our website and delivering our services, subject to confidentiality agreements",
                   "When required by law, court order, or governmental authority",
@@ -119,6 +119,14 @@ export default function PrivacyPolicy() {
                   </li>
                 ))}
               </ul>
+
+              {/* A2P SMS Required Non-Sharing Clause */}
+              <div className="bg-[oklch(0.72_0.17_70)]/10 border-l-4 border-[oklch(0.72_0.17_70)] p-5">
+                <p className="font-semibold text-[oklch(0.18_0.06_255)] text-sm uppercase tracking-wide mb-2">SMS &amp; Text Messaging — Non-Sharing Policy</p>
+                <p className="text-sm leading-relaxed text-[oklch(0.35_0.04_255)]">
+                  No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. Information sharing to subcontractors in support services, such as customer service, is permitted. All other use case categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
+                </p>
+              </div>
             </section>
 
             <section>
