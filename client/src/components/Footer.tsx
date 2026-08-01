@@ -16,11 +16,11 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-5">
+            <Link href="/" className="flex items-center gap-3 mb-5 cursor-pointer">
               <img
                 src="/manus-storage/favicon-chosen_79dadf76.png"
                 alt="East Consulting LLC Logo"
-                className="w-10 h-10 object-contain"
+                className="w-10 h-10 object-contain pointer-events-none"
               />
               <div className="flex flex-col leading-none">
                 <span className="font-['Barlow_Condensed'] font-bold text-white text-lg uppercase tracking-wide">
