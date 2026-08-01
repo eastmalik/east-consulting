@@ -17,7 +17,6 @@ import {
   Target,
   Briefcase,
   FileText,
-  Star,
   Phone,
   Mail,
   Send,
@@ -248,116 +247,6 @@ function ServicesSection() {
               </div>
             );
           })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── Resources / Checklist Section ───────────────────────────────────────────
-function ResourcesSection() {
-  const checklistItems = [
-    { item: "Obtain a business address", resource: "ipostal1.com" },
-    { item: "Obtain a business telephone number", resource: "Grasshopper.com" },
-    { item: "Obtain Articles of Incorporation", resource: "Secretary of State" },
-    { item: "Obtain EIN number", resource: "irs.gov" },
-    { item: "Purchase Domain Name", resource: "domains.google.com" },
-    { item: "Set up professional email", resource: "GoDaddy / Zoho" },
-    { item: "Obtain DUNS Number", resource: "dnb.com" },
-    { item: "Set up Business Profile on Google", resource: "google.com/business" },
-    { item: "Open Business Bank Account", resource: "Chase, BOA, or choice" },
-    { item: "Set up Business Merchant Account", resource: "Stripe, PayPal, Paysley" },
-    { item: "Create NAV account", resource: "nav.com" },
-  ];
-
-  const tradelines = [
-    { name: "Nav Boost", cost: "$39.99/mo", benefit: "Reports business credit activity" },
-    { name: "Biz Credit Central", cost: "$11.99/mo", benefit: "$2,500 Line of Credit" },
-    { name: "Ecredable Business Lift", cost: "$9.95/mo", benefit: "Reports in 1–2 weeks" },
-    { name: "Credit Strong (Business)", cost: "$99–$115/mo", benefit: "Installment tradeline" },
-    { name: "Business Net-30 Accounts", cost: "Varies", benefit: "U-Line, Quill, Grainger" },
-  ];
-
-  return (
-    <section id="resources" className="py-20 lg:py-28 bg-[oklch(0.94_0.005_255)]">
-      <div className="container">
-        {/* Header */}
-        <div className="max-w-2xl mb-14 reveal">
-          <div className="ec-section-label mb-4">Free Resources</div>
-          <h2 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-4xl lg:text-5xl uppercase leading-none mb-4">
-            Your Business Setup &{" "}
-            <span className="text-[oklch(0.72_0.17_70)]">Credit Checklist</span>
-          </h2>
-          <p className="text-[oklch(0.55_0.01_255)] text-lg leading-relaxed">
-            Complete these steps in order to build a legally established, credit-ready business. Each step positions you closer to funding.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Business Setup Checklist */}
-          <div className="reveal">
-            <h3 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-2xl uppercase tracking-wide mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 bg-[oklch(0.72_0.17_70)] flex items-center justify-center text-[oklch(0.18_0.06_255)] text-sm font-bold">1</span>
-              Business Setup Checklist
-            </h3>
-            <div className="bg-white shadow-sm">
-              {checklistItems.map((item, i) => (
-                <div
-                  key={i}
-                  className={`flex items-start justify-between gap-4 px-5 py-4 ${
-                    i < checklistItems.length - 1 ? "border-b border-[oklch(0.88_0.005_255)]" : ""
-                  }`}
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="w-5 h-5 border-2 border-[oklch(0.72_0.17_70)] shrink-0 mt-0.5" />
-                    <span className="text-[oklch(0.35_0.04_255)] text-sm leading-relaxed">{item.item}</span>
-                  </div>
-                  <span className="text-[oklch(0.72_0.17_70)] text-xs font-semibold whitespace-nowrap shrink-0">
-                    {item.resource}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Business Tradelines */}
-          <div className="reveal stagger-2">
-            <h3 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-2xl uppercase tracking-wide mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 bg-[oklch(0.18_0.06_255)] flex items-center justify-center text-[oklch(0.72_0.17_70)] text-sm font-bold">2</span>
-              Business Tradelines
-            </h3>
-            <div className="bg-white shadow-sm mb-6">
-              {tradelines.map((line, i) => (
-                <div
-                  key={i}
-                  className={`px-5 py-4 ${i < tradelines.length - 1 ? "border-b border-[oklch(0.88_0.005_255)]" : ""}`}
-                >
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-base uppercase tracking-wide">
-                      {line.name}
-                    </span>
-                    <span className="text-[oklch(0.72_0.17_70)] font-semibold text-sm">{line.cost}</span>
-                  </div>
-                  <p className="text-[oklch(0.55_0.01_255)] text-sm">{line.benefit}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Pro Tip */}
-            <div className="bg-[oklch(0.18_0.06_255)] p-6">
-              <div className="flex gap-3">
-                <Star size={18} className="text-[oklch(0.72_0.17_70)] shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-['Barlow_Condensed'] font-bold text-white text-sm uppercase tracking-wide mb-1">
-                    East Consulting Pro Tip
-                  </p>
-                  <p className="text-white/70 text-sm leading-relaxed">
-                    Complete the Business Setup Checklist in order before applying for any business credit. Lenders and vendors verify these foundational elements before approving your business for tradelines or funding.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -638,7 +527,6 @@ export default function Home() {
         <HeroSection />
         <ServicesSection />
 
-        <ResourcesSection />
         <WhySection />
         <ContactSection />
       </main>

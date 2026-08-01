@@ -107,6 +107,34 @@ export default function Resources() {
         </div>
       </section>
 
+      {/* Download PDF Banner */}
+      <section className="bg-[oklch(0.98_0.005_80)] py-12">
+        <div className="container">
+          <div className="bg-[oklch(0.18_0.06_255)] flex flex-col md:flex-row items-center justify-between gap-6 p-8">
+            <div className="flex items-center gap-5">
+              <div className="w-14 h-14 bg-[oklch(0.72_0.17_70)] flex items-center justify-center shrink-0">
+                <FileText size={26} className="text-[oklch(0.18_0.06_255)]" />
+              </div>
+              <div>
+                <h3 className="font-['Barlow_Condensed'] font-bold text-white text-xl uppercase tracking-wide mb-1">
+                  Business Setup Checklist — Free Download
+                </h3>
+                <p className="text-white/60 text-sm">
+                  The complete step-by-step checklist + tradelines guide as a printable PDF. Take it with you.
+                </p>
+              </div>
+            </div>
+            <a
+              href="/manus-storage/Business_Setup_Checklist_EastConsulting_a8976c2c.pdf"
+              download="Business_Setup_Checklist_EastConsulting.pdf"
+              className="inline-flex items-center gap-2 bg-[oklch(0.72_0.17_70)] text-[oklch(0.18_0.06_255)] font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest px-7 py-3.5 hover:bg-[oklch(0.65_0.18_70)] transition-colors duration-200 shrink-0"
+            >
+              Download PDF <ChevronRight size={16} />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Section 1 — Business Setup Checklist */}
       <section id="section-1" className="bg-[oklch(0.98_0.005_80)] py-20">
         <div className="container">
