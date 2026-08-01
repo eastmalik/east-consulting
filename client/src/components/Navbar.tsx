@@ -55,7 +55,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
               <img
-                src="/manus-storage/favicon-logo-transparent_ff591822.png"
+                src="/manus-storage/favicon-chosen_79dadf76.png"
                 alt="East Consulting LLC Logo"
                 className="w-10 h-10 object-contain"
               />
