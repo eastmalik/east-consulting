@@ -99,12 +99,12 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={16} className="text-[oklch(0.72_0.17_70)] mt-0.5 shrink-0" />
-                <Link
-                  href="/contact"
+                <a
+                  href="tel:+16783254094"
                   className="text-white/60 hover:text-[oklch(0.72_0.17_70)] text-sm transition-colors"
                 >
-                  Schedule a Consultation
-                </Link>
+                  (678) 325-4094 — Office
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-[oklch(0.72_0.17_70)] mt-0.5 shrink-0" />

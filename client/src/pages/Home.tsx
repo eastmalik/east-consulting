@@ -332,8 +332,8 @@ function ContactSection() {
               {[
                 {
                   icon: Phone,
-                  title: "Schedule a Call",
-                  detail: "Book a free 30-minute consultation",
+                  title: "Office Phone",
+                  detail: "(678) 325-4094 — Office",
                 },
                 {
                   icon: Mail,

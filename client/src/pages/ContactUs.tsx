@@ -24,10 +24,10 @@ export default function ContactUs() {
     },
     {
       icon: Phone,
-      title: "Schedule a Call",
-      detail: "Book a Free Consultation",
-      sub: "30-minute business assessment",
-      href: "#form",
+      title: "Office Phone",
+      detail: "(678) 325-4094",
+      sub: "Office line — Mon–Fri 9am–6pm CST",
+      href: "tel:+16783254094",
     },
     {
       icon: Clock,
