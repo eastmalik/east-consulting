@@ -3,6 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <!-- Clickjacking guard: GitHub Pages can't send frame-blocking headers -->
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script>
+      if (self === top) {
+        var ac = document.getElementById("antiClickjack");
+        ac.parentNode.removeChild(ac);
+      } else {
+        top.location = self.location;
+      }
+    </script>
     <title>East Consulting LLC — Business Development & Funding Readiness</title>
     <link rel="icon" type="image/png" href="/manus-storage/favicon-chosen_79dadf76.png" />
     <link rel="apple-touch-icon" href="/manus-storage/favicon-chosen_79dadf76.png" />
@@ -14,11 +25,6 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script
-      defer
-      src="%VITE_ANALYTICS_ENDPOINT%/umami"
-      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
-    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
     <!-- GoHighLevel Chat Widget -->
     <div data-chat-widget data-widget-id="6a71d8dda4347d15e37415c3" data-location-id="RWMjZMPn8duByvpkRH0w"></div>
     <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a71d8dda4347d15e37415c3" data-source="WEB_USER"></script>
