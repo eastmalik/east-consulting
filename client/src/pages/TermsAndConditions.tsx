@@ -7,15 +7,18 @@
 
 import { Link } from "wouter";
 import { ChevronLeft, FileText } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function TermsAndConditions() {
   const lastUpdated = "August 1, 2026";
 
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.002_286)] font-['Source_Sans_3']">
+      <Navbar />
 
       {/* Header */}
-      <div className="bg-[oklch(0.18_0.06_255)] py-16">
+      <div className="bg-[oklch(0.18_0.06_255)] pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-6">
           <Link
             href="/"
@@ -343,6 +346,7 @@ export default function TermsAndConditions() {
                 (678) 325-4094
               </a>
             </p>
+            <p className="text-white/70 text-sm">Address: 850 N. Jefferson Street, Jackson, MS 39202</p>
             <p className="text-white/70 text-sm">
               Website:{" "}
               <a href="https://www.eastconsultingllc.com" className="text-[oklch(0.72_0.17_70)] hover:underline">
@@ -372,6 +376,7 @@ export default function TermsAndConditions() {
         </div>
 
       </div>
+      <Footer />
     </div>
   );
 }

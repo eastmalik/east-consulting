@@ -124,7 +124,7 @@ export default function PrivacyPolicy() {
               <div className="bg-[oklch(0.72_0.17_70)]/10 border-l-4 border-[oklch(0.72_0.17_70)] p-5">
                 <p className="font-semibold text-[oklch(0.18_0.06_255)] text-sm uppercase tracking-wide mb-2">SMS &amp; Text Messaging — Non-Sharing Policy</p>
                 <p className="text-sm leading-relaxed text-[oklch(0.35_0.04_255)]">
-                  No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. Information sharing to subcontractors in support services, such as customer service, is permitted. All other use case categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
+                  No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. Information sharing to subcontractors in support services, such as customer service, is permitted. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties, excluding aggregators and providers of the text message services.
                 </p>
               </div>
             </section>
@@ -213,7 +213,7 @@ export default function PrivacyPolicy() {
               <div className="bg-[oklch(0.18_0.06_255)] p-6 text-white">
                 <p className="font-['Barlow_Condensed'] font-bold text-lg uppercase tracking-wide mb-3">East Consulting LLC</p>
                 <p className="text-white/70 text-sm mb-1">Email: <a href="mailto:support@eastconsultingllc.com" className="text-[oklch(0.72_0.17_70)] hover:underline">support@eastconsultingllc.com</a></p>
-                <p className="text-white/70 text-sm">United States</p>
+                <p className="text-white/70 text-sm">850 N. Jefferson Street, Jackson, MS 39202</p>
               </div>
             </section>
 

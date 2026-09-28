@@ -5,7 +5,7 @@
 
 import { useEffect } from "react";
 import { Link } from "wouter";
-import { ChevronRight, Phone, Mail, Clock, CheckCircle2, CalendarDays } from "lucide-react";
+import { ChevronRight, Phone, Mail, Clock, CheckCircle2, CalendarDays, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -28,6 +28,13 @@ export default function ContactUs() {
       detail: "(678) 325-4094",
       sub: "Office line — Mon–Fri 9am–6pm CST",
       href: "tel:+16783254094",
+    },
+    {
+      icon: MapPin,
+      title: "Office Address",
+      detail: "850 N. Jefferson Street",
+      sub: "Jackson, MS 39202",
+      href: null,
     },
     {
       icon: Clock,
@@ -77,7 +84,7 @@ export default function ContactUs() {
       {/* Contact Cards */}
       <section className="bg-[oklch(0.98_0.005_80)] py-14">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {contactInfo.map(({ icon: Icon, title, detail, sub, href }) => (
               <div key={title} className="bg-white border border-[oklch(0.88_0.005_255)] p-7 flex items-start gap-5 hover:border-[oklch(0.72_0.17_70)]/50 transition-colors duration-300">
                 <div className="w-12 h-12 bg-[oklch(0.18_0.06_255)] flex items-center justify-center shrink-0">

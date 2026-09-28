@@ -20,6 +20,7 @@ import {
   Phone,
   Mail,
   CalendarDays,
+  MapPin,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -342,6 +343,11 @@ function ContactSection() {
                   icon: Mail,
                   title: "Email Us",
                   detail: "support@eastconsultingllc.com",
+                },
+                {
+                  icon: MapPin,
+                  title: "Office Address",
+                  detail: "850 N. Jefferson Street, Jackson, MS 39202",
                 },
               ].map(({ icon: Icon, title, detail }) => (
                 <div key={title} className="flex items-center gap-4">
