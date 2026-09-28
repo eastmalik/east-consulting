@@ -262,7 +262,7 @@ export default function TermsOfService() {
               <div className="bg-[oklch(0.18_0.06_255)] p-6 text-white">
                 <p className="font-['Barlow_Condensed'] font-bold text-lg uppercase tracking-wide mb-3">East Consulting LLC</p>
                 <p className="text-white/70 text-sm mb-1">Email: <a href="mailto:support@eastconsultingllc.com" className="text-[oklch(0.72_0.17_70)] hover:underline">support@eastconsultingllc.com</a></p>
-                <p className="text-white/70 text-sm">United States</p>
+                <p className="text-white/70 text-sm">850 N. Jefferson Street, Jackson, MS 39202</p>
               </div>
             </section>
 

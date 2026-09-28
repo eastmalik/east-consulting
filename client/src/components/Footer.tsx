@@ -109,7 +109,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-[oklch(0.72_0.17_70)] mt-0.5 shrink-0" />
-                <span className="text-white/60 text-sm">United States</span>
+                <span className="text-white/60 text-sm">850 N. Jefferson Street<br />Jackson, MS 39202</span>
               </li>
             </ul>
 
