@@ -20,12 +20,22 @@ pnpm build    # output in dist/public
 
 ## DNS (Hostinger)
 
-Only two records point at the website:
+Only these records point at the website. Hostinger offers no ALIAS record
+type for this domain, so the bare domain uses GitHub's four A records:
 
 | Type | Name | Value |
 | --- | --- | --- |
 | CNAME | www | eastmalik.github.io |
-| ALIAS | @ | eastmalik.github.io |
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
 
-Do **not** add GitHub's A-record IPs. Do **not** touch MX, hostingermail,
-mailgun, leadconnectorhq, DKIM, SPF or DMARC records — they run business email.
+If GitHub ever changes its Pages IP addresses, update these four records
+(current list: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
+
+Do **not** touch MX, hostingermail, autodiscover, autoconfig, DKIM, SPF or
+DMARC records — they run business email.
+
+Rollback to Manus (pre-migration values): CNAME www → cname.manus.space,
+and a single A @ → 2.57.91.91 in place of the four GitHub A records.
