@@ -125,7 +125,7 @@ export default function Resources() {
               </div>
             </div>
             <a
-              href="/manus-storage/Business_Setup_Checklist_EastConsulting_a8976c2c.pdf"
+              href="/manus-storage/Business_Setup_Checklist_EastConsulting.pdf"
               download="Business_Setup_Checklist_EastConsulting.pdf"
               className="inline-flex items-center gap-2 bg-[oklch(0.72_0.17_70)] text-[oklch(0.18_0.06_255)] font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest px-7 py-3.5 hover:bg-[oklch(0.65_0.18_70)] transition-colors duration-200 shrink-0"
             >
