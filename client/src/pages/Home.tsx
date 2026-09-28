@@ -77,7 +77,7 @@ function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url(/manus-storage/hero-abstract-v2-Ffp4aEFBeeoRj6U8avu5tM.webp)`,
+          backgroundImage: `url(/manus-storage/hero-bg.svg)`,
         }}
       />
       {/* Gradient Overlay */}
@@ -261,7 +261,7 @@ function WhySection() {
     <section
       className="py-20 lg:py-28 relative overflow-hidden"
       style={{
-        backgroundImage: `url(/manus-storage/cta-bg-BrB3fkT2Z5B7EhuYn5ohnL.webp)`,
+        backgroundImage: `url(/manus-storage/cta-bg.svg)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
