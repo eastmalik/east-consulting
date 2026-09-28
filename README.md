@@ -7,7 +7,7 @@ React + Vite single-page app, deployed to GitHub Pages.
 - **Images/files:** `client/public/manus-storage/` (folder name is historical).
 - **Custom domain:** `client/public/CNAME`.
 - **Pages:** one file per page in `client/src/pages/`, routes in `client/src/App.tsx`.
-- **Page title / description / favicon / chat widget:** `client/index.html`.
+- **Page title / description / favicon:** `client/index.html`.
 
 ## Local development
 
