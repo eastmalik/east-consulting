@@ -102,17 +102,6 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Desktop CTA */}
-            <div className="hidden lg:block">
-              <Link
-                href="/contact"
-                className="ec-btn-primary text-sm inline-flex items-center gap-2"
-              >
-                Get Started
-                <ChevronRight size={16} />
-              </Link>
-            </div>
-
             {/* Mobile Menu Toggle */}
             <button
               className="lg:hidden text-white p-2"
@@ -158,14 +147,6 @@ export default function Navbar() {
               )
             )}
           </nav>
-          <Link
-            href="/contact"
-            onClick={() => setIsOpen(false)}
-            className="ec-btn-primary w-full justify-center text-base mt-6 inline-flex items-center gap-2"
-          >
-            Get Started Today
-            <ChevronRight size={18} />
-          </Link>
         </div>
       </div>
     </>
