@@ -105,6 +105,28 @@ export default function ContactUs() {
         </div>
       </section>
 
+      {/* Text Messaging Disclosure (A2P opt-in) */}
+      <section className="bg-[oklch(0.98_0.005_80)] pb-14">
+        <div className="container">
+          <div className="bg-white border-l-4 border-[oklch(0.72_0.17_70)] border-y border-r border-y-[oklch(0.88_0.005_255)] border-r-[oklch(0.88_0.005_255)] p-7">
+            <p className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-sm uppercase tracking-wide mb-3">
+              Text Messaging (SMS)
+            </p>
+            <p className="text-[oklch(0.35_0.04_255)] text-sm leading-relaxed mb-3">
+              To chat with us, use the chat button in the bottom corner of any page. If you would like to receive text messages from us, enter your mobile number in the chat and check the optional SMS consent box. By checking the box, you agree to receive customer care text messages from <strong>East Consulting LLC</strong>, such as replies to your inquiry, appointment coordination, and follow-up on your request. We do not send marketing or promotional texts.
+            </p>
+            <p className="text-[oklch(0.35_0.04_255)] text-sm leading-relaxed mb-3">
+              Message frequency varies. Message &amp; data rates may apply. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to opt out at any time. Consent is not a condition of any purchase, and your mobile number and opt-in consent are never shared with third parties or affiliates.
+            </p>
+            <p className="text-sm">
+              <Link href="/privacy-policy" className="text-[oklch(0.35_0.12_255)] font-semibold hover:underline">Privacy Policy</Link>
+              <span className="text-gray-300 mx-2">|</span>
+              <Link href="/terms-and-conditions" className="text-[oklch(0.35_0.12_255)] font-semibold hover:underline">Terms &amp; Conditions</Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Form + What to Expect */}
       <section id="form" className="bg-[oklch(0.18_0.06_255)] py-20">
         <div className="container">
