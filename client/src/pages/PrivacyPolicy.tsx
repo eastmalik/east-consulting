@@ -119,6 +119,9 @@ export default function PrivacyPolicy() {
                   </li>
                 ))}
               </ul>
+              <p className="text-sm leading-relaxed mb-5">
+                None of the circumstances above apply to text messaging opt-in data and consent, or to phone numbers collected for text messaging. That information is never shared with third parties or affiliates, as described below.
+              </p>
 
               {/* A2P SMS Required Non-Sharing Clause */}
               <div className="bg-[oklch(0.72_0.17_70)]/10 border-l-4 border-[oklch(0.72_0.17_70)] p-5">

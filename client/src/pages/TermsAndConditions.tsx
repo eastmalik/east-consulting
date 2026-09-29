@@ -107,7 +107,7 @@ export default function TermsAndConditions() {
                 3.1 Business Identity &amp; Program Description
               </h3>
               <p className="text-gray-700 text-sm leading-relaxed">
-                SMS messages are sent by <strong>East Consulting LLC</strong>, a business development consulting company. Messages may include appointment reminders, consultation confirmations, follow-up information, program updates, and promotional content related to our business consulting services.
+                SMS messages are sent by <strong>East Consulting LLC</strong>, a business development consulting company. Our SMS program is used for customer care only: responses to inquiries and support requests, appointment coordination, and follow-up communications related to an existing inquiry. We do not send promotional or marketing text messages.
               </p>
             </div>
 
@@ -117,10 +117,10 @@ export default function TermsAndConditions() {
                 3.2 Consent to Receive SMS Messages
               </h3>
               <p className="text-gray-700 text-sm leading-relaxed mb-3">
-                By submitting your phone number through any form on our website, you expressly consent to receive SMS text messages from East Consulting LLC at the mobile number provided. Consent is not a condition of purchasing any goods or services.
+                You opt in to SMS messages only by providing your mobile number in the chat widget on our website and checking the SMS consent checkbox. The checkbox is optional and is never pre-checked. Consent is not a condition of purchasing any goods or services, and you can still contact us by chat, email, or phone without opting in.
               </p>
               <p className="text-gray-700 text-sm leading-relaxed">
-                We may send two types of SMS messages: (1) <strong>Transactional messages</strong> — appointment confirmations, reminders, and service-related updates; and (2) <strong>Marketing messages</strong> — promotional content, program announcements, and business tips. You may opt in to one or both types.
+                We send one type of SMS message: <strong>customer care messages</strong> — replies to your inquiry or support request, appointment coordination, and follow-up related to that inquiry. We do not send marketing or promotional messages.
               </p>
             </div>
 

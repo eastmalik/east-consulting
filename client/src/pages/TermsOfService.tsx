@@ -206,7 +206,7 @@ export default function TermsOfService() {
                 12. SMS Text Messaging Terms
               </h2>
               <p className="text-sm leading-relaxed mb-5">
-                East Consulting LLC operates an SMS messaging program to communicate with clients and prospective clients regarding appointment reminders, business coaching updates, and related non-marketing notifications. By providing your phone number and opting in, you agree to the following terms.
+                East Consulting LLC operates an SMS messaging program to communicate with clients and prospective clients for customer care only: responses to inquiries and support requests, appointment coordination, and follow-up communications related to an existing inquiry. We do not send marketing or promotional text messages. By providing your phone number and opting in, you agree to the following terms.
               </p>
 
               {/* Business Identity */}
