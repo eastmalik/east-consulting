@@ -117,10 +117,10 @@ export default function TermsAndConditions() {
                 3.2 Consent to Receive SMS Messages
               </h3>
               <p className="text-gray-700 text-sm leading-relaxed mb-3">
-                You opt in to SMS messages only by providing your mobile number in the chat widget on our website and checking the SMS consent checkbox. The checkbox is optional and is never pre-checked. Consent is not a condition of purchasing any goods or services, and you can still contact us by chat, email, or phone without opting in.
+                You opt in to SMS messages by entering your mobile number in the chat widget on our website and submitting the chat form. The chat form displays a consent notice stating that, by submitting, you authorize East Consulting LLC to text or call the number provided with informational and transactional messages, possibly using automated means. The chat widget is the only place on our website where phone numbers are collected for text messaging. Consent is not a condition of purchasing any goods or services; you can contact us by email or phone instead.
               </p>
               <p className="text-gray-700 text-sm leading-relaxed">
-                We send one type of SMS message: <strong>customer care messages</strong> — replies to your inquiry or support request, appointment coordination, and follow-up related to that inquiry. We do not send marketing or promotional messages.
+                We send one type of SMS message: <strong>informational and transactional messages</strong> — replies to your inquiry or support request, appointment coordination, and follow-up related to that inquiry. We do not send marketing or promotional messages.
               </p>
             </div>
 

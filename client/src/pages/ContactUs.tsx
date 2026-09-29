@@ -113,10 +113,10 @@ export default function ContactUs() {
               Text Messaging (SMS)
             </p>
             <p className="text-[oklch(0.35_0.04_255)] text-sm leading-relaxed mb-3">
-              To chat with us, use the chat button in the bottom corner of any page. If you would like to receive text messages from us, enter your mobile number in the chat and check the optional SMS consent box. By checking the box, you agree to receive customer care text messages from <strong>East Consulting LLC</strong>, such as replies to your inquiry, appointment coordination, and follow-up on your request. We do not send marketing or promotional texts.
+              To reach us, use the chat button in the bottom corner of any page. The chat form asks for your name, mobile number, and message. By submitting the chat form, you authorize <strong>East Consulting LLC</strong> to text or call the number you provide with informational and transactional messages, such as replies to your inquiry, appointment coordination, and follow-up on your request, possibly using automated means. We do not send marketing or promotional texts.
             </p>
             <p className="text-[oklch(0.35_0.04_255)] text-sm leading-relaxed mb-3">
-              Message frequency varies. Message &amp; data rates may apply. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to opt out at any time. Consent is not a condition of any purchase, and your mobile number and opt-in consent are never shared with third parties or affiliates.
+              Message frequency varies. Message &amp; data rates may apply. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to opt out at any time. Consent is not a condition of purchase; you can also reach us by email or phone without using the chat. Your mobile number and opt-in consent are never shared with third parties or affiliates.
             </p>
             <p className="text-sm">
               <Link href="/privacy-policy" className="text-[oklch(0.35_0.12_255)] font-semibold hover:underline">Privacy Policy</Link>
