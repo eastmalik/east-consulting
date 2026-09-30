@@ -67,7 +67,7 @@ export default function TermsAndConditions() {
             1. Services Description
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            East Consulting LLC provides business development consulting services, including but not limited to: business entity formation guidance, business credit building strategies, funding readiness preparation, market positioning, and related educational resources.
+            East Consulting LLC provides business development consulting services, including but not limited to: business entity formation guidance, professional business setup, business banking and operations setup, funding readiness preparation, market positioning, and related educational resources. East Consulting LLC does not provide credit repair, debt relief, or lending services.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
             Our services are intended to provide general business guidance and education. Nothing on this website or in our consulting sessions constitutes legal, financial, tax, or accounting advice. You should consult qualified licensed professionals for advice specific to your situation.

@@ -24,5 +24,11 @@ See README.md for the stack, deploy workflow and DNS.
   number (`(678) 325-4094`) across the whole site.
 - Do not use the word "revenue" in site copy; the owner prefers "capital".
 - Keep the repository public (free GitHub Pages requires it).
+- A2P texting compliance: never add credit repair, credit building,
+  tradeline, credit bureau/monitoring, debt relief or lending content. The
+  business does not offer these (A2P was rejected with 30950 for it).
+- The GoHighLevel chat widget in `client/index.html` is the site's only SMS
+  opt-in. Don't add other forms that collect phone numbers, and keep the
+  Contact page and Terms & Conditions consent wording matching the widget.
 - Never advise changing Hostinger email DNS records (MX, hostingermail,
   autodiscover, autoconfig, DKIM, SPF, DMARC).

@@ -68,7 +68,7 @@ export default function TermsOfService() {
                 {[
                   "Business entity formation guidance and support",
                   "Professional business setup consulting",
-                  "Business credit building strategy and education",
+                  "Business banking and operations setup",
                   "Funding readiness assessment and preparation",
                   "Market positioning and business launch consulting",
                   "Educational resources and materials related to business development",
@@ -157,7 +157,7 @@ export default function TermsOfService() {
               <ul className="space-y-2 text-sm mb-3">
                 {[
                   "Loss of profits, capital, or business opportunities",
-                  "Failure to obtain business credit, loans, or funding",
+                  "Failure to obtain funding or investment",
                   "Decisions made based on our educational guidance",
                   "Errors or omissions in any information provided",
                   "Unauthorized access to or alteration of your data",
@@ -213,7 +213,7 @@ export default function TermsOfService() {
               <div className="mb-5">
                 <p className="font-semibold text-[oklch(0.18_0.06_255)] text-sm uppercase tracking-wide mb-2">12.1 — Business Identity</p>
                 <p className="text-sm leading-relaxed">
-                  SMS messages are sent by <strong>East Consulting LLC</strong>, a business development consulting company that helps entrepreneurs establish legally sound, credit-ready businesses positioned to attract investors and secure funding. Messages may include appointment confirmations, consultation reminders, service updates, and follow-up communications.
+                  SMS messages are sent by <strong>East Consulting LLC</strong>, a business development consulting company that helps entrepreneurs establish legally sound, professionally structured businesses positioned to attract investors and secure funding. Messages may include appointment confirmations, consultation reminders, service updates, and follow-up communications.
                 </p>
               </div>
 
