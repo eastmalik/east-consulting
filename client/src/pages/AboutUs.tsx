@@ -34,20 +34,20 @@ export default function AboutUs() {
 
   const whyItems = [
     "Most entrepreneurs skip critical setup steps that disqualify them from funding",
-    "Banks and lenders verify your business foundation before approving credit",
+    "Banks and investors verify your business foundation before they commit",
     "A properly structured business separates personal and business liability",
-    "Business credit is built separately from personal credit — and most don't know how",
+    "A professional business identity builds trust with customers, partners, and banks",
     "The right structure unlocks tax advantages unavailable to individuals",
-    "Investors and lenders look for legitimacy — we help you build it from day one",
+    "Investors look for legitimacy — we help you build it from day one",
   ];
 
   const processSteps = [
     { num: "01", title: "Business Entity Formation", desc: "Register your LLC or Corporation with the Secretary of State with the right structure for your goals." },
     { num: "02", title: "EIN & Business Identity", desc: "Obtain your Employer Identification Number and establish your professional business identity." },
     { num: "03", title: "Business Banking", desc: "Open a dedicated business bank account to separate finances and establish banking history." },
-    { num: "04", title: "Credit Profile Setup", desc: "Register with Dun & Bradstreet, establish your DUNS number, and begin building your business credit profile." },
-    { num: "05", title: "Tradeline Strategy", desc: "Open the right vendor and tradeline accounts to build a strong credit history quickly." },
-    { num: "06", title: "Funding Readiness", desc: "With your foundation in place, position your business to access capital, credit lines, and investor funding." },
+    { num: "04", title: "Professional Presence", desc: "Set up your business domain, professional email, phone number, and Google Business Profile so customers can find and trust you." },
+    { num: "05", title: "Operations & Bookkeeping", desc: "Put a bookkeeping system and merchant account in place so your finances stay organized and documented." },
+    { num: "06", title: "Funding Readiness", desc: "With your foundation in place, position your business to access capital and investor funding." },
   ];
 
   return (
@@ -73,7 +73,7 @@ export default function AboutUs() {
               Built to Help <span className="text-[oklch(0.72_0.17_70)]">Entrepreneurs</span> Win
             </h1>
             <p className="text-white/65 text-lg leading-relaxed">
-              East Consulting LLC was founded on a simple belief: every entrepreneur deserves access to the knowledge and structure that positions their business for real success — not just an idea, but a fundable, legally sound, credit-ready enterprise.
+              East Consulting LLC was founded on a simple belief: every entrepreneur deserves access to the knowledge and structure that positions their business for real success — not just an idea, but a fundable, legally sound, professionally structured enterprise.
             </p>
           </div>
         </div>
@@ -94,10 +94,10 @@ export default function AboutUs() {
                 Your Business Development Partner
               </h2>
               <p className="text-[oklch(0.45_0.01_255)] text-base leading-relaxed mb-5">
-                East Consulting LLC is a business development consulting firm specializing in helping entrepreneurs establish their businesses the right way — from the ground up. We guide you through every foundational step: entity formation, professional setup, business credit building, and funding readiness.
+                East Consulting LLC is a business development consulting firm specializing in helping entrepreneurs establish their businesses the right way — from the ground up. We guide you through every foundational step: entity formation, professional setup, business banking, and funding readiness.
               </p>
               <p className="text-[oklch(0.45_0.01_255)] text-base leading-relaxed mb-8">
-                We understand that most people who want to start a business don't know what they don't know. The steps that banks, lenders, and investors look for are rarely taught — and skipping them can cost you years of opportunity. That's where we come in.
+                We understand that most people who want to start a business don't know what they don't know. The steps that banks and investors look for are rarely taught — and skipping them can cost you years of opportunity. That's where we come in.
               </p>
               <Link
                 href="/contact"
@@ -110,7 +110,7 @@ export default function AboutUs() {
               <div className="bg-[oklch(0.18_0.06_255)] p-8">
                 <h3 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.72_0.17_70)] text-xl uppercase tracking-wide mb-3">Our Mission</h3>
                 <p className="text-white/70 text-sm leading-relaxed">
-                  To empower entrepreneurs with the knowledge, structure, and strategy needed to build legitimate, fundable businesses — closing the gap between a great idea and a business that lenders and investors take seriously.
+                  To empower entrepreneurs with the knowledge, structure, and strategy needed to build legitimate, fundable businesses — closing the gap between a great idea and a business that banks and investors take seriously.
                 </p>
               </div>
               <div className="bg-[oklch(0.72_0.17_70)] p-8">

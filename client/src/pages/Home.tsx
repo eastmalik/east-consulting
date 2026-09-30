@@ -12,7 +12,7 @@ import {
   CheckCircle2,
   ArrowRight,
   Building2,
-  CreditCard,
+  Landmark,
   TrendingUp,
   Target,
   Briefcase,
@@ -108,8 +108,8 @@ function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-white/75 text-lg lg:text-xl leading-relaxed mb-10 max-w-xl font-['Source_Sans_3']">
-            East Consulting LLC guides entrepreneurs through every step of establishing a legally sound, 
-            credit-ready business — positioned to attract investors and secure funding.
+            East Consulting LLC guides entrepreneurs through every step of establishing a legally sound,
+            professionally structured business — positioned to attract investors and secure funding.
           </p>
 
           {/* CTAs */}
@@ -136,7 +136,7 @@ function HeroSection() {
           <div className="flex flex-wrap gap-6 mt-12 pt-12 border-t border-white/15">
             {[
               "Entity Formation",
-              "Business Credit Building",
+              "Business Setup",
               "Funding Readiness",
               "90-Day Launch System",
             ].map((item) => (
@@ -173,22 +173,22 @@ function ServicesSection() {
       icon: FileText,
       title: "Professional Business Setup",
       description:
-        "A legitimate business needs more than an idea. We help you establish every foundational element: professional email, business address, phone number, EIN, DUNS number, and Google Business Profile.",
+        "A legitimate business needs more than an idea. We help you establish every foundational element: professional email, business address, phone number, EIN, and Google Business Profile.",
       features: ["EIN registration (IRS)", "Professional domain & email", "Business address & phone", "Google Business Profile"],
     },
     {
-      icon: CreditCard,
-      title: "Business Credit Building",
+      icon: Landmark,
+      title: "Business Banking & Operations",
       description:
-        "We walk you through building a strong business credit profile from scratch — opening the right tradelines, establishing credit history, and positioning your business to qualify for funding.",
-      features: ["Business bank account setup", "Tradeline strategy", "NAV & credit monitoring", "Net-30 vendor accounts"],
+        "Run your business like a business from day one. We help you separate business and personal finances and set up the systems that keep your books clean and your operations organized.",
+      features: ["Business bank account setup", "Bookkeeping system setup", "Merchant account setup", "Separating business & personal finances"],
     },
     {
       icon: TrendingUp,
       title: "Funding Readiness Strategy",
       description:
-        "Getting funded requires more than a good idea — lenders verify your business foundation. We ensure every element is in place so your business is positioned to access capital, credit lines, and investors.",
-      features: ["Funding checklist completion", "Lender-ready documentation", "Business credit score building", "Capital access strategy"],
+        "Getting funded requires more than a good idea — banks and investors verify your business foundation. We ensure every element is in place so your business is positioned to access capital and attract investors.",
+      features: ["Funding checklist completion", "Investor-ready documentation", "Business plan & financial documents", "Capital access strategy"],
     },
     {
       icon: Target,
@@ -288,7 +288,7 @@ function WhySection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
             {[
-              { icon: "🏢", label: "Business Owners", desc: "Write off expenses, build credit, access capital" },
+              { icon: "🏢", label: "Business Owners", desc: "Write off expenses, build equity, access capital" },
               { icon: "📈", label: "Investors", desc: "Capital gains advantages and portfolio growth" },
               { icon: "🏠", label: "Real Estate Owners", desc: "Depreciation, equity, and passive income" },
             ].map(({ icon, label, desc }) => (
