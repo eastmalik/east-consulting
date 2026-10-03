@@ -131,6 +131,27 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* 7Band Family Footer */}
+      <div className="border-t border-white/10">
+        <div className="container py-4">
+          <p className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 text-white/50 text-xs leading-relaxed text-center">
+            <span className="whitespace-nowrap">Part of the 7Band family</span>
+            <span className="text-white/25">·</span>
+            <a href="https://theflow.7bandfinancialagency.com" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap hover:text-[oklch(0.72_0.17_70)] transition-colors">
+              THE FLOW — free weekly webinar
+            </a>
+            <span className="text-white/25">·</span>
+            <a href="https://www.7bandfinancialagency.com" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap hover:text-[oklch(0.72_0.17_70)] transition-colors">
+              7Band Financial Agency — life insurance
+            </a>
+            <span className="text-white/25">·</span>
+            <Link href="/" className="whitespace-nowrap hover:text-[oklch(0.72_0.17_70)] transition-colors">
+              East Consulting LLC — business structure
+            </Link>
+          </p>
+        </div>
+      </div>
+
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="container py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
