@@ -94,7 +94,7 @@ export default function AboutUs() {
                 Your Business Development Partner
               </h2>
               <p className="text-[oklch(0.45_0.01_255)] text-base leading-relaxed mb-5">
-                East Consulting LLC is a business development consulting firm specializing in helping entrepreneurs establish their businesses the right way — from the ground up. We guide you through every foundational step: entity formation, professional setup, business banking, and funding readiness.
+                East Consulting LLC is a business development consulting firm specializing in helping entrepreneurs establish their businesses the right way — from the ground up. We guide you through every foundational step: entity formation, professional setup, business banking, and funding readiness. East Consulting LLC covers Levels 2–3 of THE FLOW map: The Business Firewall and Capital Readiness.
               </p>
               <p className="text-[oklch(0.45_0.01_255)] text-base leading-relaxed mb-8">
                 We understand that most people who want to start a business don't know what they don't know. The steps that banks and investors look for are rarely taught — and skipping them can cost you years of opportunity. That's where we come in.

@@ -256,6 +256,65 @@ function ServicesSection() {
   );
 }
 
+// ─── THE FLOW Map Section ────────────────────────────────────────────────────
+const FLOW_URL = "https://theflow.7bandfinancialagency.com";
+
+function FlowMapSection() {
+  const levels = [
+    {
+      level: "Level 2",
+      title: "The Business Firewall",
+      desc: "Entity formation, EIN, business banking, and a professional presence: the structure that keeps your business separate from your personal life.",
+    },
+    {
+      level: "Level 3",
+      title: "Capital Readiness",
+      desc: "Bookkeeping, documentation, and a funding readiness plan, so your business is prepared when it is time to seek capital.",
+    },
+  ];
+
+  return (
+    <section id="the-flow" className="py-20 lg:py-24 bg-white">
+      <div className="container">
+        <div className="max-w-2xl mb-12 reveal">
+          <div className="ec-section-label mb-4">THE FLOW Map</div>
+          <h2 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-4xl lg:text-5xl uppercase leading-none mb-4">
+            Where We Fit:{" "}
+            <span className="text-[oklch(0.72_0.17_70)]">Levels 2–3</span>
+          </h2>
+          <p className="text-[oklch(0.55_0.01_255)] text-lg leading-relaxed">
+            East Consulting LLC covers Levels 2–3 of THE FLOW map: The Business Firewall and Capital Readiness.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          {levels.map((item, i) => (
+            <div key={item.title} className={`ec-card p-7 reveal stagger-${i + 1}`}>
+              <p className="font-['Barlow_Condensed'] font-bold text-[oklch(0.72_0.17_70)] text-sm uppercase tracking-widest mb-2">
+                {item.level}
+              </p>
+              <h3 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-2xl uppercase tracking-wide mb-3">
+                {item.title}
+              </h3>
+              <p className="text-[oklch(0.55_0.01_255)] text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <a
+          href={FLOW_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ec-btn-outline text-base px-8 py-4 inline-flex items-center gap-2"
+        >
+          See the whole map: join THE FLOW
+          <ArrowRight size={18} />
+        </a>
+      </div>
+    </section>
+  );
+}
+
 // ─── Why Section ──────────────────────────────────────────────────────────────
 function WhySection() {
   return (
@@ -426,7 +485,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <ServicesSection />
-
+        <FlowMapSection />
         <WhySection />
         <ContactSection />
       </main>

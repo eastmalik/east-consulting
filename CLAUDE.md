@@ -30,5 +30,12 @@ See README.md for the stack, deploy workflow and DNS.
 - The GoHighLevel chat widget in `client/index.html` is the site's only SMS
   opt-in. Don't add other forms that collect phone numbers, and keep the
   Contact page and Terms & Conditions consent wording matching the widget.
+- 7Band family (Sales Tree Coherence Audit, Oct 2026): East Consulting covers
+  Levels 2–3 of THE FLOW map (The Business Firewall, Capital Readiness). The
+  family footer lives in `Footer.tsx`; the Arise Credit Pro entry is left out
+  pending the owner's decision because of the A2P credit-repair rejection.
+  Main next step is booking a consultation; the secondary CTA is "See the
+  whole map: join THE FLOW". No pricing; ask the owner before adding the
+  $2,997 Capital Architecture Program.
 - Never advise changing Hostinger email DNS records (MX, hostingermail,
   autodiscover, autoconfig, DKIM, SPF, DMARC).
