@@ -6,16 +6,35 @@
 
 import { ChevronRight, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "wouter";
+import { BOOKING_URL, CONTACT } from "@/lib/site";
+
+const linkColumns = [
+  {
+    heading: "Quick Links",
+    links: [
+      { label: "Home", href: "/" },
+      { label: "What We Do", href: "/what-we-do" },
+      { label: "Resources", href: "/resources" },
+    ],
+  },
+  {
+    heading: "Legals",
+    links: [
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of Service", href: "/terms-of-service" },
+      { label: "Terms & Conditions", href: "/terms-and-conditions" },
+    ],
+  },
+];
 
 export default function Footer() {
   return (
     <footer className="bg-[oklch(0.12_0.05_255)] text-white">
-      {/* Main Footer */}
       <div className="container py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {/* Brand Column */}
-          <div className="lg:col-span-1">
+          <div>
             <Link href="/" className="flex items-center gap-3 mb-5 cursor-pointer">
               <img
                 src="/manus-storage/logo.svg"
@@ -30,58 +49,30 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed">
-              Helping entrepreneurs establish their businesses properly and get them funding-ready. Your success is our mission.
+              Helping entrepreneurs form their businesses the right way, from day one.
             </p>
           </div>
 
-          {/* Quick Links Column */}
-          <div>
-            <h4 className="font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest text-[oklch(0.72_0.17_70)] mb-5">
-              Quick Links
-            </h4>
-            <ul className="space-y-3">
-              {[
-                { label: "Home", href: "/" },
-                { label: "About Us", href: "/about" },
-                { label: "Resources", href: "/resources" },
-                { label: "Contact Us", href: "/contact" },
-              ].map(({ label, href }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    className="text-white/60 hover:text-[oklch(0.72_0.17_70)] text-sm transition-colors duration-200 flex items-center gap-2 group"
-                  >
-                    <ChevronRight size={12} className="text-[oklch(0.72_0.17_70)] opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legals Column */}
-          <div>
-            <h4 className="font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest text-[oklch(0.72_0.17_70)] mb-5">
-              Legals
-            </h4>
-            <ul className="space-y-3">
-              {[
-                { label: "Privacy Policy", href: "/privacy-policy" },
-                { label: "Terms of Service", href: "/terms-of-service" },
-                { label: "Terms & Conditions", href: "/terms-and-conditions" },
-              ].map(({ label, href }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    className="text-white/60 hover:text-[oklch(0.72_0.17_70)] text-sm transition-colors duration-200 flex items-center gap-2 group"
-                  >
-                    <ChevronRight size={12} className="text-[oklch(0.72_0.17_70)] opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {linkColumns.map(({ heading, links }) => (
+            <div key={heading}>
+              <h4 className="font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest text-[oklch(0.72_0.17_70)] mb-5">
+                {heading}
+              </h4>
+              <ul className="space-y-3">
+                {links.map(({ label, href }) => (
+                  <li key={label}>
+                    <Link
+                      href={href}
+                      className="text-white/60 hover:text-[oklch(0.72_0.17_70)] text-sm transition-colors duration-200 flex items-center gap-2 group"
+                    >
+                      <ChevronRight size={12} className="text-[oklch(0.72_0.17_70)] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
           {/* Contact Column */}
           <div>
@@ -91,64 +82,31 @@ export default function Footer() {
             <ul className="space-y-4 mb-6">
               <li className="flex items-start gap-3">
                 <Mail size={16} className="text-[oklch(0.72_0.17_70)] mt-0.5 shrink-0" />
-                <a
-                  href="mailto:support@eastconsultingllc.com"
-                  className="text-white/60 hover:text-[oklch(0.72_0.17_70)] text-sm transition-colors"
-                >
-                  support@eastconsultingllc.com
+                <a href={`mailto:${CONTACT.email}`} className="text-white/60 hover:text-[oklch(0.72_0.17_70)] text-sm transition-colors">
+                  {CONTACT.email}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={16} className="text-[oklch(0.72_0.17_70)] mt-0.5 shrink-0" />
-                <a
-                  href="tel:+16783254094"
-                  className="text-white/60 hover:text-[oklch(0.72_0.17_70)] text-sm transition-colors"
-                >
-                  (678) 325-4094 — Office
+                <a href={CONTACT.phoneHref} className="text-white/60 hover:text-[oklch(0.72_0.17_70)] text-sm transition-colors">
+                  {CONTACT.phone} — Office
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-[oklch(0.72_0.17_70)] mt-0.5 shrink-0" />
-                <span className="text-white/60 text-sm">850 N. Jefferson Street<br />Jackson, MS 39202</span>
+                <span className="text-white/60 text-sm">{CONTACT.addressLine1}<br />{CONTACT.addressLine2}</span>
               </li>
             </ul>
-
-            <div className="p-4 border border-[oklch(0.72_0.17_70)]/30 bg-[oklch(0.72_0.17_70)]/5">
-              <p className="text-white/80 text-sm font-['Barlow_Condensed'] font-semibold uppercase tracking-wide mb-2">
-                Ready to Get Started?
-              </p>
-              <a
-                href="https://api.leadconnectorhq.com/widget/booking/22Ig6MGZ2XELV3Qi9Zr3"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[oklch(0.72_0.17_70)] text-sm font-semibold hover:underline flex items-center gap-1"
-              >
-                Book a Free Consultation <ChevronRight size={14} />
-              </a>
-            </div>
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[oklch(0.72_0.17_70)] text-sm font-semibold hover:underline inline-flex items-center gap-1"
+            >
+              Book a Free Consultation <ChevronRight size={14} />
+            </a>
           </div>
 
-        </div>
-      </div>
-
-      {/* 7Band Family Footer */}
-      <div className="border-t border-white/10">
-        <div className="container py-4">
-          <p className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 text-white/50 text-xs leading-relaxed text-center">
-            <span className="whitespace-nowrap">Part of the 7Band family</span>
-            <span className="text-white/25">·</span>
-            <a href="https://theflow.7bandfinancialagency.com" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap hover:text-[oklch(0.72_0.17_70)] transition-colors">
-              THE FLOW — free weekly webinar
-            </a>
-            <span className="text-white/25">·</span>
-            <a href="https://www.7bandfinancialagency.com" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap hover:text-[oklch(0.72_0.17_70)] transition-colors">
-              7Band Financial Agency — life insurance
-            </a>
-            <span className="text-white/25">·</span>
-            <Link href="/" className="whitespace-nowrap hover:text-[oklch(0.72_0.17_70)] transition-colors">
-              East Consulting LLC — business structure
-            </Link>
-          </p>
         </div>
       </div>
 

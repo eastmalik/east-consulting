@@ -20,22 +20,24 @@ See README.md for the stack, deploy workflow and DNS.
 
 - Every image or file the site shows lives in `client/public/manus-storage/`
   (historical folder name). Never link to images hosted on another platform.
-- Keep one contact email (`support@eastconsultingllc.com`) and one phone
-  number (`(678) 325-4094`) across the whole site.
-- Do not use the word "revenue" in site copy; the owner prefers "capital".
+- Keep one contact email (`support@eastconsultingllc.com`), one phone number
+  (`(678) 325-4094`) and one address (850 N. Jefferson Street, Jackson, MS
+  39202). They live in `client/src/lib/site.ts`, along with the booking link.
 - Keep the repository public (free GitHub Pages requires it).
-- A2P texting compliance: never add credit repair, credit building,
-  tradeline, credit bureau/monitoring, debt relief or lending content. The
-  business does not offer these (A2P was rejected with 30950 for it).
-- The GoHighLevel chat widget in `client/index.html` is the site's only SMS
-  opt-in. Don't add other forms that collect phone numbers, and keep the
-  Contact page and Terms & Conditions consent wording matching the widget.
-- 7Band family (Sales Tree Coherence Audit, Oct 2026): East Consulting covers
-  Levels 2–3 of THE FLOW map (The Business Firewall, Capital Readiness). The
-  family footer lives in `Footer.tsx`; the Arise Credit Pro entry is left out
-  pending the owner's decision because of the A2P credit-repair rejection.
-  Main next step is booking a consultation; the secondary CTA is "See the
-  whole map: join THE FLOW". No pricing; ask the owner before adding the
-  $2,997 Capital Architecture Program.
 - Never advise changing Hostinger email DNS records (MX, hostingermail,
   autodiscover, autoconfig, DKIM, SPF, DMARC).
+
+## Current site (rebuilt November 2026)
+
+- Simple site about business formation only. Pages: Home, What We Do
+  (`/what-we-do`; `/about` redirects there), and "Coming soon" placeholders
+  for Resources, Privacy Policy, Terms of Service and Terms & Conditions.
+  `/contact` redirects to Home.
+- The two services (Business Entity Formation, Professional Business Setup)
+  are in `client/src/components/ServiceCards.tsx`, worded exactly as the
+  owner wrote them.
+- Content must stay business formation only: no credit, funding, capital,
+  lending, tax or insurance content.
+- No chat widget and no 7Band family footer for now; the owner may add the
+  chat widget back later (it would be the site's only SMS opt-in).
+- Look: same navy & amber style, logo and browser-tab icon.

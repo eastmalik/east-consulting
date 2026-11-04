@@ -1,121 +1,46 @@
 /*
  * East Consulting LLC — Home Page
  * Design: Modern Momentum — Navy & Amber
- * Sections: Hero, Stats, Services, Process, About, Resources, CTA, Contact
- * Deep navy + amber palette, Barlow Condensed + Source Sans 3 typography
- * Asymmetric layouts, angled section dividers, scroll-reveal animations
+ * Sections: Hero, Services, Contact
  */
 
-import { useEffect, useRef, useState } from "react";
-import {
-  ChevronRight,
-  CheckCircle2,
-  ArrowRight,
-  Building2,
-  Landmark,
-  TrendingUp,
-  Target,
-  Briefcase,
-  FileText,
-  Phone,
-  Mail,
-  CalendarDays,
-  MapPin,
-} from "lucide-react";
+import { ChevronRight, ArrowRight, CheckCircle2, Phone, Mail, MapPin, CalendarDays } from "lucide-react";
+import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ServiceCards from "@/components/ServiceCards";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-
-// ─── Animated Counter ───────────────────────────────────────────────────────
-function AnimatedCounter({ end, suffix = "", prefix = "" }: { end: number; suffix?: string; prefix?: string }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const started = useRef(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true;
-          const duration = 1800;
-          const steps = 60;
-          const increment = end / steps;
-          let current = 0;
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= end) {
-              setCount(end);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(current));
-            }
-          }, duration / steps);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [end]);
-
-  return (
-    <span ref={ref}>
-      {prefix}{count}{suffix}
-    </span>
-  );
-}
+import { BOOKING_URL, CONTACT } from "@/lib/site";
 
 // ─── Hero Section ────────────────────────────────────────────────────────────
 function HeroSection() {
-  const handleNavClick = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[oklch(0.12_0.05_255)]">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(/manus-storage/hero-bg.svg)`,
-        }}
-      />
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.12_0.05_255)/95] via-[oklch(0.12_0.05_255)/80] to-[oklch(0.12_0.05_255)/40]" />
-      {/* Amber diagonal accent */}
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-[oklch(0.12_0.05_255)]">
+      {/* Amber edge accent */}
       <div className="absolute top-0 right-0 w-1 h-full bg-[oklch(0.72_0.17_70)]" />
 
-      <div className="container relative z-10 pt-24 pb-16 lg:pt-32 lg:pb-24">
+      <div className="container relative z-10 pt-28 pb-20 lg:pt-36 lg:pb-28">
         <div className="max-w-3xl">
-          {/* Label */}
           <div className="ec-section-label text-[oklch(0.72_0.17_70)] mb-6">
-            Business Development Consulting
+            Business Formation Consulting
           </div>
 
-          {/* Headline */}
           <h1 className="font-['Barlow_Condensed'] font-bold text-white leading-none mb-6">
             <span className="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl uppercase">
-              Build Your
+              East Consulting LLC
             </span>
-            <span className="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl uppercase text-[oklch(0.72_0.17_70)]">
-              Business Right.
-            </span>
-            <span className="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl uppercase">
-              Get Funded.
+            <span className="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl uppercase text-[oklch(0.72_0.17_70)] mt-3">
+              Business Formation, Done Right.
             </span>
           </h1>
 
-          {/* Subheadline */}
           <p className="text-white/75 text-lg lg:text-xl leading-relaxed mb-10 max-w-xl font-['Source_Sans_3']">
-            East Consulting LLC guides entrepreneurs through every step of establishing a legally sound,
-            professionally structured business — positioned to attract investors and secure funding.
+            We guide entrepreneurs through forming their business and setting up every foundational element, the right way, from day one.
           </p>
 
-          {/* CTAs */}
           <div className="flex flex-wrap gap-4">
             <a
-              href="https://api.leadconnectorhq.com/widget/booking/22Ig6MGZ2XELV3Qi9Zr3"
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="ec-btn-primary text-base px-8 py-4 inline-flex items-center gap-2"
@@ -123,23 +48,17 @@ function HeroSection() {
               Book a Free Consultation
               <ChevronRight size={18} />
             </a>
-            <button
-              onClick={() => handleNavClick("#services")}
-              className="ec-btn-outline text-base px-8 py-4 border-white/40 text-white hover:border-[oklch(0.72_0.17_70)] hover:text-[oklch(0.72_0.17_70)] hover:bg-transparent"
+            <Link
+              href="/what-we-do"
+              className="ec-btn-outline text-base px-8 py-4 border-white/40 text-white hover:border-[oklch(0.72_0.17_70)] hover:text-[oklch(0.72_0.17_70)] hover:bg-transparent inline-flex items-center gap-2"
             >
-              Explore Services
+              What We Do
               <ArrowRight size={18} />
-            </button>
+            </Link>
           </div>
 
-          {/* Trust Indicators */}
           <div className="flex flex-wrap gap-6 mt-12 pt-12 border-t border-white/15">
-            {[
-              "Entity Formation",
-              "Business Setup",
-              "Funding Readiness",
-              "90-Day Launch System",
-            ].map((item) => (
+            {["Business Entity Formation", "Professional Business Setup"].map((item) => (
               <div key={item} className="flex items-center gap-2 text-white/60 text-sm">
                 <CheckCircle2 size={14} className="text-[oklch(0.72_0.17_70)]" />
                 <span className="font-['Source_Sans_3']">{item}</span>
@@ -148,227 +67,22 @@ function HeroSection() {
           </div>
         </div>
       </div>
-
-      {/* Bottom angle */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M0 60 L1440 0 L1440 60 Z" fill="oklch(0.98 0.005 80)" />
-        </svg>
-      </div>
     </section>
   );
 }
 
 // ─── Services Section ─────────────────────────────────────────────────────────
 function ServicesSection() {
-  const services = [
-    {
-      icon: Building2,
-      title: "Business Entity Formation",
-      description:
-        "We guide you through selecting and registering the right business structure — LLC, Corporation, or Partnership — with your state's Secretary of State, ensuring your business is legally established from day one.",
-      features: ["Name verification & trademark check", "Secretary of State filing", "Registered Agent setup", "Articles of Incorporation"],
-    },
-    {
-      icon: FileText,
-      title: "Professional Business Setup",
-      description:
-        "A legitimate business needs more than an idea. We help you establish every foundational element: professional email, business address, phone number, EIN, and Google Business Profile.",
-      features: ["EIN registration (IRS)", "Professional domain & email", "Business address & phone", "Google Business Profile"],
-    },
-    {
-      icon: Landmark,
-      title: "Business Banking & Operations",
-      description:
-        "Run your business like a business from day one. We help you separate business and personal finances and set up the systems that keep your books clean and your operations organized.",
-      features: ["Business bank account setup", "Bookkeeping system setup", "Merchant account setup", "Separating business & personal finances"],
-    },
-    {
-      icon: TrendingUp,
-      title: "Funding Readiness Strategy",
-      description:
-        "Getting funded requires more than a good idea — banks and investors verify your business foundation. We ensure every element is in place so your business is positioned to access capital and attract investors.",
-      features: ["Funding checklist completion", "Investor-ready documentation", "Business plan & financial documents", "Capital access strategy"],
-    },
-    {
-      icon: Target,
-      title: "Market Positioning",
-      description:
-        "Understand who your real customer is, what problem you're truly solving, and how to position your offer for maximum capital. We help you validate your market before you invest heavily.",
-      features: ["Real customer identification", "Core problem articulation", "Value proposition development", "Market validation research"],
-    },
-    {
-      icon: Briefcase,
-      title: "Business Launch Consulting",
-      description:
-        "From idea to market in 90 days. We provide a structured roadmap to take your business from concept to operational — with the right platforms, tools, and strategies to generate capital quickly.",
-      features: ["90-day launch roadmap", "Platform selection guidance", "Capital model development", "Launch execution support"],
-    },
-  ];
-
   return (
     <section id="services" className="py-20 lg:py-28 bg-[oklch(0.98_0.005_80)]">
       <div className="container">
-        {/* Header */}
         <div className="max-w-2xl mb-14 reveal">
           <div className="ec-section-label mb-4">What We Do</div>
-          <h2 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-4xl lg:text-5xl xl:text-6xl uppercase leading-none mb-4">
-            Services Built for{" "}
-            <span className="text-[oklch(0.72_0.17_70)]">Serious Entrepreneurs</span>
+          <h2 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-4xl lg:text-5xl xl:text-6xl uppercase leading-none">
+            Our <span className="text-[oklch(0.72_0.17_70)]">Services</span>
           </h2>
-          <p className="text-[oklch(0.55_0.01_255)] text-lg leading-relaxed">
-            Every service we offer is designed with one goal: getting your business properly established and funding-ready. No shortcuts. No guesswork.
-          </p>
         </div>
-
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, i) => {
-            const Icon = service.icon;
-            return (
-              <div
-                key={i}
-                className={`ec-card p-7 reveal stagger-${(i % 3) + 1}`}
-              >
-                <div className="w-12 h-12 bg-[oklch(0.72_0.17_70)]/10 flex items-center justify-center mb-5">
-                  <Icon size={24} className="text-[oklch(0.72_0.17_70)]" />
-                </div>
-                <h3 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-xl uppercase tracking-wide mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-[oklch(0.55_0.01_255)] text-sm leading-relaxed mb-5">
-                  {service.description}
-                </p>
-                <ul className="space-y-2">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-[oklch(0.35_0.04_255)]">
-                      <CheckCircle2 size={13} className="text-[oklch(0.72_0.17_70)] shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── THE FLOW Map Section ────────────────────────────────────────────────────
-const FLOW_URL = "https://theflow.7bandfinancialagency.com";
-
-function FlowMapSection() {
-  const levels = [
-    {
-      level: "Level 2",
-      title: "The Business Firewall",
-      desc: "Entity formation, EIN, business banking, and a professional presence: the structure that keeps your business separate from your personal life.",
-    },
-    {
-      level: "Level 3",
-      title: "Capital Readiness",
-      desc: "Bookkeeping, documentation, and a funding readiness plan, so your business is prepared when it is time to seek capital.",
-    },
-  ];
-
-  return (
-    <section id="the-flow" className="py-20 lg:py-24 bg-white">
-      <div className="container">
-        <div className="max-w-2xl mb-12 reveal">
-          <div className="ec-section-label mb-4">THE FLOW Map</div>
-          <h2 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-4xl lg:text-5xl uppercase leading-none mb-4">
-            Where We Fit:{" "}
-            <span className="text-[oklch(0.72_0.17_70)]">Levels 2–3</span>
-          </h2>
-          <p className="text-[oklch(0.55_0.01_255)] text-lg leading-relaxed">
-            East Consulting LLC covers Levels 2–3 of THE FLOW map: The Business Firewall and Capital Readiness.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-          {levels.map((item, i) => (
-            <div key={item.title} className={`ec-card p-7 reveal stagger-${i + 1}`}>
-              <p className="font-['Barlow_Condensed'] font-bold text-[oklch(0.72_0.17_70)] text-sm uppercase tracking-widest mb-2">
-                {item.level}
-              </p>
-              <h3 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-2xl uppercase tracking-wide mb-3">
-                {item.title}
-              </h3>
-              <p className="text-[oklch(0.55_0.01_255)] text-sm leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <a
-          href={FLOW_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="ec-btn-outline text-base px-8 py-4 inline-flex items-center gap-2"
-        >
-          See the whole map: join THE FLOW
-          <ArrowRight size={18} />
-        </a>
-      </div>
-    </section>
-  );
-}
-
-// ─── Why Section ──────────────────────────────────────────────────────────────
-function WhySection() {
-  return (
-    <section
-      className="py-20 lg:py-28 relative overflow-hidden"
-      style={{
-        backgroundImage: `url(/manus-storage/cta-bg.svg)`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
-    >
-      <div className="absolute inset-0 bg-[oklch(0.12_0.05_255)/88]" />
-
-      <div className="container relative z-10">
-        <div className="max-w-3xl mx-auto text-center reveal">
-          <div className="ec-section-label justify-center mb-4 text-[oklch(0.72_0.17_70)]">
-            Why Start a Business?
-          </div>
-          <h2 className="font-['Barlow_Condensed'] font-bold text-white text-4xl lg:text-5xl xl:text-6xl uppercase leading-none mb-6">
-            The Tax Code Rewards{" "}
-            <span className="text-[oklch(0.72_0.17_70)]">Business Owners</span>
-          </h2>
-          <p className="text-white/70 text-lg leading-relaxed mb-10">
-            The U.S. tax code is not just a set of rules — it is a series of incentives designed to reward specific behaviors that grow the economy. It heavily incentivizes three groups of people: <strong className="text-white">Business Owners, Investors, and Real Estate Owners.</strong>
-          </p>
-          <p className="text-white/70 text-lg leading-relaxed mb-12">
-            To build true generational wealth and achieve financial freedom, you must position yourself to be one or more of these. East Consulting LLC helps you take that crucial first step.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-            {[
-              { icon: "🏢", label: "Business Owners", desc: "Write off expenses, build equity, access capital" },
-              { icon: "📈", label: "Investors", desc: "Capital gains advantages and portfolio growth" },
-              { icon: "🏠", label: "Real Estate Owners", desc: "Depreciation, equity, and passive income" },
-            ].map(({ icon, label, desc }) => (
-              <div key={label} className="border border-white/15 p-6 bg-white/5 backdrop-blur-sm">
-                <div className="text-3xl mb-3">{icon}</div>
-                <h4 className="font-['Barlow_Condensed'] font-bold text-white text-lg uppercase tracking-wide mb-2">
-                  {label}
-                </h4>
-                <p className="text-white/60 text-sm">{desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <button
-            onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="ec-btn-primary text-base px-10 py-4"
-          >
-            Start Your Business Journey
-            <ChevronRight size={18} />
-          </button>
-        </div>
+        <ServiceCards />
       </div>
     </section>
   );
@@ -376,75 +90,45 @@ function WhySection() {
 
 // ─── Contact Section ──────────────────────────────────────────────────────────
 function ContactSection() {
+  const details = [
+    { icon: Phone, title: "Office Phone", detail: CONTACT.phone, href: CONTACT.phoneHref },
+    { icon: Mail, title: "Email Us", detail: CONTACT.email, href: `mailto:${CONTACT.email}` },
+    { icon: MapPin, title: "Office Address", detail: `${CONTACT.addressLine1}, ${CONTACT.addressLine2}`, href: null },
+  ];
+
   return (
     <section id="contact" className="py-20 lg:py-28 bg-[oklch(0.18_0.06_255)]">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Left Side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="reveal">
             <div className="ec-section-label text-[oklch(0.72_0.17_70)] mb-4">Get In Touch</div>
             <h2 className="font-['Barlow_Condensed'] font-bold text-white text-4xl lg:text-5xl uppercase leading-none mb-6">
-              Ready to Build Your{" "}
-              <span className="text-[oklch(0.72_0.17_70)]">Funding-Ready Business?</span>
+              Let's Get Your Business <span className="text-[oklch(0.72_0.17_70)]">Started</span>
             </h2>
             <p className="text-white/65 text-base leading-relaxed mb-10">
-              Schedule a free consultation with East Consulting LLC. We'll assess where you are, where you want to go, and map out exactly what needs to happen to get your business properly established and positioned for funding.
+              Book a free consultation, or reach us directly.
             </p>
-
             <div className="space-y-6">
-              {[
-                {
-                  icon: Phone,
-                  title: "Office Phone",
-                  detail: "(678) 325-4094 — Office",
-                },
-                {
-                  icon: Mail,
-                  title: "Email Us",
-                  detail: "support@eastconsultingllc.com",
-                },
-                {
-                  icon: MapPin,
-                  title: "Office Address",
-                  detail: "850 N. Jefferson Street, Jackson, MS 39202",
-                },
-              ].map(({ icon: Icon, title, detail }) => (
+              {details.map(({ icon: Icon, title, detail, href }) => (
                 <div key={title} className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-[oklch(0.72_0.17_70)]/15 flex items-center justify-center shrink-0">
                     <Icon size={20} className="text-[oklch(0.72_0.17_70)]" />
                   </div>
                   <div>
-                    <p className="font-['Barlow_Condensed'] font-bold text-white text-sm uppercase tracking-wide">
-                      {title}
-                    </p>
-                    <p className="text-white/60 text-sm">{detail}</p>
+                    <p className="font-['Barlow_Condensed'] font-bold text-white text-sm uppercase tracking-wide">{title}</p>
+                    {href ? (
+                      <a href={href} className="text-white/60 text-sm hover:text-[oklch(0.72_0.17_70)] transition-colors">
+                        {detail}
+                      </a>
+                    ) : (
+                      <p className="text-white/60 text-sm">{detail}</p>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
-
-            {/* What to expect */}
-            <div className="mt-10 p-6 border border-white/10 bg-white/5">
-              <h4 className="font-['Barlow_Condensed'] font-bold text-white text-sm uppercase tracking-widest mb-4">
-                What to Expect
-              </h4>
-              <ul className="space-y-3">
-                {[
-                  "Free 30-minute business assessment",
-                  "Customized roadmap for your situation",
-                  "Clear next steps to get funding-ready",
-                  "No pressure, no obligation",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-white/65 text-sm">
-                    <CheckCircle2 size={14} className="text-[oklch(0.72_0.17_70)] shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
 
-          {/* Booking CTA Card */}
           <div className="reveal stagger-2 flex items-center justify-center">
             <div className="bg-white/5 border border-white/10 p-10 text-center w-full max-w-md">
               <div className="w-16 h-16 bg-[oklch(0.72_0.17_70)]/15 flex items-center justify-center mx-auto mb-6">
@@ -454,10 +138,10 @@ function ContactSection() {
                 Book Your Free Consultation
               </h3>
               <p className="text-white/60 text-sm leading-relaxed mb-8">
-                Click below to schedule your free 30-minute business assessment. Choose a time that works for you — no pressure, no obligation.
+                Choose a time that works for you. No pressure, no obligation.
               </p>
               <a
-                href="https://api.leadconnectorhq.com/widget/booking/22Ig6MGZ2XELV3Qi9Zr3"
+                href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-[oklch(0.72_0.17_70)] text-[oklch(0.12_0.04_255)] font-['Barlow_Condensed'] font-bold text-lg uppercase tracking-wider px-10 py-4 hover:bg-[oklch(0.82_0.17_70)] transition-colors duration-200 w-full justify-center"
@@ -485,8 +169,6 @@ export default function Home() {
       <main>
         <HeroSection />
         <ServicesSection />
-        <FlowMapSection />
-        <WhySection />
         <ContactSection />
       </main>
       <Footer />
