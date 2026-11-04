@@ -11,10 +11,9 @@ import { Link, useLocation } from "wouter";
 
 const navLinks = [
   { label: "Home", href: "/", isAnchor: false },
-  { label: "Services", href: "/#services", isAnchor: true },
-  { label: "About", href: "/about", isAnchor: false },
+  { label: "What We Do", href: "/what-we-do", isAnchor: false },
   { label: "Resources", href: "/resources", isAnchor: false },
-  { label: "Contact", href: "/contact", isAnchor: false },
+  { label: "Contact", href: "/#contact", isAnchor: true },
 ];
 
 export default function Navbar() {

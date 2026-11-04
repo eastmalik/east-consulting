@@ -1,27 +1,25 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Redirect, Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import PrivacyPolicy from "@/pages/PrivacyPolicy";
-import TermsAndConditions from "@/pages/TermsAndConditions";
-import AboutUs from "./pages/AboutUs";
-import ContactUs from "./pages/ContactUs";
-import Resources from "./pages/Resources";
-import TermsOfService from "./pages/TermsOfService";
+import WhatWeDo from "./pages/WhatWeDo";
+import ComingSoon from "./pages/ComingSoon";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/about"} component={AboutUs} />
-      <Route path={"/contact"} component={ContactUs} />
-      <Route path={"/resources"} component={Resources} />
-      <Route path={"/privacy-policy"} component={PrivacyPolicy} />
-      <Route path={"/terms-of-service"} component={TermsOfService} />
-      <Route path={"/terms-and-conditions"} component={TermsAndConditions} />
+      <Route path={"/what-we-do"} component={WhatWeDo} />
+      <Route path={"/resources"}>{() => <ComingSoon title="Resources" />}</Route>
+      <Route path={"/privacy-policy"}>{() => <ComingSoon title="Privacy Policy" />}</Route>
+      <Route path={"/terms-of-service"}>{() => <ComingSoon title="Terms of Service" />}</Route>
+      <Route path={"/terms-and-conditions"}>{() => <ComingSoon title="Terms & Conditions" />}</Route>
+      {/* Old addresses that people or search engines may still use */}
+      <Route path={"/about"}><Redirect to="/what-we-do" /></Route>
+      <Route path={"/contact"}><Redirect to="/" /></Route>
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
