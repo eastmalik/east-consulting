@@ -23,9 +23,9 @@ function HeroSection() {
         <div className="max-w-3xl">
           <div className="ec-section-label text-white/70 mb-6">Business Formation Consulting</div>
           <h1 className="font-['Barlow_Condensed'] font-bold text-white uppercase leading-[0.95] mb-6">
-            <span className="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl">East Consulting LLC</span>
+            <span className="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl">East Consulting</span>
             <span className="block text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white/75 mt-4">
-              Business Formation, Done Right.
+              Business Formation in the Right Order.
             </span>
           </h1>
           <p className="text-white/75 text-lg lg:text-xl leading-relaxed mb-10 max-w-xl">
