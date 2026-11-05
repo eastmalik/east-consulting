@@ -21,12 +21,8 @@ function HeroSection() {
     <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-white">
       <div className="container relative z-10 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-3xl">
-          <div className="ec-section-label text-[oklch(0.42_0.03_255)] mb-6">Business Formation Consulting</div>
-          <h1 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] uppercase leading-[0.95] mb-6">
-            <span className="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl">East Consulting</span>
-            <span className="block text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-[oklch(0.42_0.03_255)] mt-4">
-              Business Formation in the Right Order.
-            </span>
+          <h1 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] uppercase leading-[0.95] mb-8 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl">
+            Business Formation in the Right Order.
           </h1>
           <p className="text-[oklch(0.42_0.03_255)] text-lg lg:text-xl leading-relaxed mb-10 max-w-xl">
             We guide entrepreneurs through forming their business and setting up every foundational element, the right way, from day one.
