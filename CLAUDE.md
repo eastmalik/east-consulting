@@ -47,8 +47,16 @@ See README.md for the stack, deploy workflow and DNS.
   intro, then numbered rows (001., 002.) for the owner's two real services
   only (never the template's eight sample services), then the shared booking
   band. The services live in `client/src/lib/services.ts`, worded exactly as
-  the owner wrote them; the band is `client/src/components/BookingBand.tsx`. "Coming soon" placeholders: About, Press, Resources, Privacy Policy,
-  Terms of Service, Terms & Conditions. `/contact` redirects to Home.
+  the owner wrote them; the band is `client/src/components/BookingBand.tsx`.
+- "Coming soon" placeholders: Press, Resources, Privacy Policy, Terms of
+  Service, Terms & Conditions. `/contact` redirects to Home.
+- About (`/about`) follows the GHL About page
+  (sites.leadconnectorhq.com/preview/rsPJnGbOXFjbQeJvKlmC): navy hero with the
+  mission, "Why choose us?", who we work with, booking band. Wording rewritten
+  for business formation with no experience or track-record claims. The
+  template's testimonials (Maria Chen, John Doe, Ahmed Khan) are fake samples:
+  never publish them; add real ones only when the owner sends them with the
+  clients' permission.
 - Content must stay business formation only: no credit, funding, capital,
   lending, tax or insurance content.
 - No chat widget and no 7Band family footer for now; the owner may add the
