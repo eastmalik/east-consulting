@@ -1,7 +1,7 @@
 /*
  * East Consulting LLC — Navbar Component
- * Design: Modern Momentum — Navy & Amber
- * Dark navy background with amber accent on active/hover states
+ * Design: navy & white
+ * Dark navy background with white accent on active/hover states
  * Bold condensed typography, clean horizontal layout
  */
 
@@ -62,7 +62,7 @@ export default function Navbar() {
                 <span className="font-['Barlow_Condensed'] font-bold text-white text-lg tracking-wide uppercase">
                   East Consulting
                 </span>
-                <span className="font-['Source_Sans_3'] text-[oklch(0.72_0.17_70)] text-xs tracking-widest uppercase">
+                <span className="font-['Source_Sans_3'] text-white/60 text-xs tracking-widest uppercase">
                   LLC
                 </span>
               </div>
@@ -75,10 +75,10 @@ export default function Navbar() {
                   <button
                     key={link.href}
                     onClick={() => handleAnchorClick(link.href)}
-                    className="font-['Barlow_Condensed'] font-600 text-sm tracking-widest uppercase text-white/80 hover:text-[oklch(0.72_0.17_70)] transition-colors duration-200 relative group"
+                    className="font-['Barlow_Condensed'] font-600 text-sm tracking-widest uppercase text-white/80 hover:text-white transition-colors duration-200 relative group"
                   >
                     {link.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[oklch(0.72_0.17_70)] transition-all duration-200 group-hover:w-full" />
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full" />
                   </button>
                 ) : (
                   <Link
@@ -86,13 +86,13 @@ export default function Navbar() {
                     href={link.href}
                     className={`font-['Barlow_Condensed'] font-600 text-sm tracking-widest uppercase transition-colors duration-200 relative group ${
                       isActive(link.href)
-                        ? "text-[oklch(0.72_0.17_70)]"
-                        : "text-white/80 hover:text-[oklch(0.72_0.17_70)]"
+                        ? "text-white"
+                        : "text-white/80 hover:text-white"
                     }`}
                   >
                     {link.label}
                     <span
-                      className={`absolute -bottom-1 left-0 h-0.5 bg-[oklch(0.72_0.17_70)] transition-all duration-200 ${
+                      className={`absolute -bottom-1 left-0 h-0.5 bg-white transition-all duration-200 ${
                         isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"
                       }`}
                     />
@@ -126,22 +126,22 @@ export default function Navbar() {
                 <button
                   key={link.href}
                   onClick={() => handleAnchorClick(link.href)}
-                  className="flex items-center justify-between py-4 border-b border-white/10 text-white font-['Barlow_Condensed'] font-600 text-2xl uppercase tracking-wider hover:text-[oklch(0.72_0.17_70)] transition-colors text-left"
+                  className="flex items-center justify-between py-4 border-b border-white/10 text-white font-['Barlow_Condensed'] font-600 text-2xl uppercase tracking-wider hover:text-white transition-colors text-left"
                   style={{ transitionDelay: isOpen ? `${i * 50}ms` : "0ms" }}
                 >
                   {link.label}
-                  <ChevronRight size={20} className="text-[oklch(0.72_0.17_70)]" />
+                  <ChevronRight size={20} className="text-white" />
                 </button>
               ) : (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-between py-4 border-b border-white/10 text-white font-['Barlow_Condensed'] font-600 text-2xl uppercase tracking-wider hover:text-[oklch(0.72_0.17_70)] transition-colors"
+                  className="flex items-center justify-between py-4 border-b border-white/10 text-white font-['Barlow_Condensed'] font-600 text-2xl uppercase tracking-wider hover:text-white transition-colors"
                   style={{ transitionDelay: isOpen ? `${i * 50}ms` : "0ms" }}
                 >
                   {link.label}
-                  <ChevronRight size={20} className="text-[oklch(0.72_0.17_70)]" />
+                  <ChevronRight size={20} className="text-white" />
                 </Link>
               )
             )}

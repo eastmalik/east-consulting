@@ -1,7 +1,7 @@
 /*
  * East Consulting LLC — Footer Component
- * Design: Modern Momentum — Navy & Amber
- * Dark navy background, amber accents, clean column layout
+ * Design: navy & white
+ * Dark navy background, white accents, clean column layout
  */
 
 import { ChevronRight, Mail, Phone, MapPin } from "lucide-react";
@@ -45,7 +45,7 @@ export default function Footer() {
                 <span className="font-['Barlow_Condensed'] font-bold text-white text-lg uppercase tracking-wide">
                   East Consulting
                 </span>
-                <span className="text-[oklch(0.72_0.17_70)] text-xs tracking-widest uppercase">LLC</span>
+                <span className="text-white/60 text-xs tracking-widest uppercase">LLC</span>
               </div>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed">
@@ -55,7 +55,7 @@ export default function Footer() {
 
           {linkColumns.map(({ heading, links }) => (
             <div key={heading}>
-              <h4 className="font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest text-[oklch(0.72_0.17_70)] mb-5">
+              <h4 className="font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest text-white mb-5">
                 {heading}
               </h4>
               <ul className="space-y-3">
@@ -63,9 +63,9 @@ export default function Footer() {
                   <li key={label}>
                     <Link
                       href={href}
-                      className="text-white/60 hover:text-[oklch(0.72_0.17_70)] text-sm transition-colors duration-200 flex items-center gap-2 group"
+                      className="text-white/60 hover:text-white text-sm transition-colors duration-200 flex items-center gap-2 group"
                     >
-                      <ChevronRight size={12} className="text-[oklch(0.72_0.17_70)] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <ChevronRight size={12} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                       {label}
                     </Link>
                   </li>
@@ -76,24 +76,24 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h4 className="font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest text-[oklch(0.72_0.17_70)] mb-5">
+            <h4 className="font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest text-white mb-5">
               Contact
             </h4>
             <ul className="space-y-4 mb-6">
               <li className="flex items-start gap-3">
-                <Mail size={16} className="text-[oklch(0.72_0.17_70)] mt-0.5 shrink-0" />
-                <a href={`mailto:${CONTACT.email}`} className="text-white/60 hover:text-[oklch(0.72_0.17_70)] text-sm transition-colors">
+                <Mail size={16} className="text-white mt-0.5 shrink-0" />
+                <a href={`mailto:${CONTACT.email}`} className="text-white/60 hover:text-white text-sm transition-colors">
                   {CONTACT.email}
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Phone size={16} className="text-[oklch(0.72_0.17_70)] mt-0.5 shrink-0" />
-                <a href={CONTACT.phoneHref} className="text-white/60 hover:text-[oklch(0.72_0.17_70)] text-sm transition-colors">
+                <Phone size={16} className="text-white mt-0.5 shrink-0" />
+                <a href={CONTACT.phoneHref} className="text-white/60 hover:text-white text-sm transition-colors">
                   {CONTACT.phone} — Office
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-[oklch(0.72_0.17_70)] mt-0.5 shrink-0" />
+                <MapPin size={16} className="text-white mt-0.5 shrink-0" />
                 <span className="text-white/60 text-sm">{CONTACT.addressLine1}<br />{CONTACT.addressLine2}</span>
               </li>
             </ul>
@@ -101,7 +101,7 @@ export default function Footer() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[oklch(0.72_0.17_70)] text-sm font-semibold hover:underline inline-flex items-center gap-1"
+              className="text-white text-sm font-semibold hover:underline inline-flex items-center gap-1"
             >
               Book a Free Consultation <ChevronRight size={14} />
             </a>
@@ -117,10 +117,10 @@ export default function Footer() {
             © {new Date().getFullYear()} East Consulting LLC. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="/privacy-policy" className="text-white/40 hover:text-[oklch(0.72_0.17_70)] text-xs transition-colors">
+            <Link href="/privacy-policy" className="text-white/40 hover:text-white text-xs transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="text-white/40 hover:text-[oklch(0.72_0.17_70)] text-xs transition-colors">
+            <Link href="/terms-of-service" className="text-white/40 hover:text-white text-xs transition-colors">
               Terms of Service
             </Link>
           </div>

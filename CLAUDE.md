@@ -40,4 +40,12 @@ See README.md for the stack, deploy workflow and DNS.
   lending, tax or insurance content.
 - No chat widget and no 7Band family footer for now; the owner may add the
   chat widget back later (it would be the site's only SMS opt-in).
-- Look: same navy & amber style, logo and browser-tab icon.
+- Look: navy & white only (owner's choice, Nov 2026), laid out after
+  betdavidconsulting.com: hero, CTA strip, What We Do, numbered formation
+  steps, "I'm ready" band, free consultation section. No gold in the UI;
+  the gold compass logo and favicon are the only exception. Shared button
+  and card styles are in `client/src/index.css` (`ec-btn-light`,
+  `ec-btn-navy`, `ec-btn-outline-light`, `ec-btn-outline-navy`, `ec-card`).
+- Template sections still waiting on real content from the owner (do not
+  invent it): founder photo/bio, stats, testimonials/results, video, social
+  media links.

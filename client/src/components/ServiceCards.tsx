@@ -28,8 +28,8 @@ export default function ServiceCards() {
         const Icon = service.icon;
         return (
           <div key={service.title} className={`ec-card p-7 lg:p-9 reveal stagger-${i + 1}`}>
-            <div className="w-12 h-12 bg-[oklch(0.72_0.17_70)]/10 flex items-center justify-center mb-5">
-              <Icon size={24} className="text-[oklch(0.72_0.17_70)]" />
+            <div className="w-12 h-12 bg-[oklch(0.18_0.06_255)]/[0.07] flex items-center justify-center mb-5">
+              <Icon size={24} className="text-[oklch(0.18_0.06_255)]" />
             </div>
             <h3 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-2xl uppercase tracking-wide mb-3">
               {service.title}
@@ -38,7 +38,7 @@ export default function ServiceCards() {
             <ul className="space-y-2.5">
               {service.features.map((feature) => (
                 <li key={feature} className="flex items-center gap-2 text-sm text-[oklch(0.35_0.04_255)]">
-                  <CheckCircle2 size={14} className="text-[oklch(0.72_0.17_70)] shrink-0" />
+                  <CheckCircle2 size={14} className="text-[oklch(0.18_0.06_255)] shrink-0" />
                   {feature}
                 </li>
               ))}
