@@ -41,9 +41,13 @@ See README.md for the stack, deploy workflow and DNS.
   one." The GHL page's phone (678) 775-9800 is wrong; keep (678) 325-4094.
   Its social icons point at generic facebook.com/instagram.com/youtube.com,
   so they are left out until the owner sends real profile links.
-- Other pages: Services = What We Do (`/what-we-do`, the two services in
-  `client/src/components/ServiceCards.tsx`, worded exactly as the owner wrote
-  them). "Coming soon" placeholders: About, Press, Resources, Privacy Policy,
+- GoHighLevel is the template for every page. Services (`/what-we-do`)
+  follows the GHL Services page
+  (sites.leadconnectorhq.com/preview/Ap8jXaAv93B4dUnROPOs): "Our Services"
+  intro, then numbered rows (001., 002.) for the owner's two real services
+  only (never the template's eight sample services), then the shared booking
+  band. The services live in `client/src/lib/services.ts`, worded exactly as
+  the owner wrote them; the band is `client/src/components/BookingBand.tsx`. "Coming soon" placeholders: About, Press, Resources, Privacy Policy,
   Terms of Service, Terms & Conditions. `/contact` redirects to Home.
 - Content must stay business formation only: no credit, funding, capital,
   lending, tax or insurance content.
