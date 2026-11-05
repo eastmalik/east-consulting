@@ -1,18 +1,22 @@
 /*
- * East Consulting LLC — What We Do (/what-we-do)
+ * East Consulting LLC — Services (/what-we-do)
+ * Layout follows the owner's GoHighLevel Services page, in navy & white:
+ * intro · numbered service rows · booking band
  */
 
 import { useEffect } from "react";
-import { Link } from "wouter";
-import { ChevronRight } from "lucide-react";
+import { Check } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ServiceCards from "@/components/ServiceCards";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { BOOKING_URL } from "@/lib/site";
+import BookingBand from "@/components/BookingBand";
+import { SERVICES } from "@/lib/services";
+
+const NAVY = "text-[oklch(0.18_0.06_255)]";
+const SLATE = "text-[oklch(0.42_0.03_255)]";
+const HEADLINE = "font-['Darker_Grotesque'] font-bold leading-[0.95]";
+const LINE = "border-[oklch(0.9_0.015_255)]";
 
 export default function WhatWeDo() {
-  useScrollReveal();
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, []);
@@ -21,46 +25,49 @@ export default function WhatWeDo() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <section className="bg-white pt-28 pb-16">
-        <div className="container">
-          <div className="flex items-center gap-2 text-[oklch(0.55_0.02_255)] text-sm mb-6">
-            <Link href="/" className="hover:text-[oklch(0.32_0.09_255)] transition-colors">Home</Link>
-            <ChevronRight size={14} />
-            <span className="text-[oklch(0.42_0.03_255)]">What We Do</span>
-          </div>
-          <div className="max-w-3xl">
-            <div className="ec-section-label text-[oklch(0.42_0.03_255)] mb-5">What We Do</div>
-            <h1 className="font-['Darker_Grotesque'] font-bold text-[oklch(0.18_0.06_255)] text-5xl lg:text-7xl uppercase leading-none mb-6">
-              Business Formation, <span className="text-[oklch(0.42_0.03_255)]">Done Right</span>
-            </h1>
-            <p className="text-[oklch(0.42_0.03_255)] text-lg leading-relaxed">
-              East Consulting LLC helps entrepreneurs form their business and set up every foundational element the right way, from day one.
+      <main className="flex-1">
+        {/* Intro */}
+        <section className="bg-white pt-32 pb-12 lg:pt-44 lg:pb-16">
+          <div className="container grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-20 items-start">
+            <h1 className={`${HEADLINE} ${NAVY} text-6xl sm:text-7xl lg:text-8xl`}>Our Services</h1>
+            <p className={`${SLATE} text-lg leading-relaxed lg:pt-4`}>
+              Our services cover every foundational step of starting your business: forming the right legal structure
+              with your state, and setting up the professional identity a legitimate business needs. Whether you're
+              starting from an idea or formalizing a business you already run, we guide you every step of the way.
             </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="bg-white py-20 flex-1">
-        <div className="container">
-          <ServiceCards />
-        </div>
-      </section>
+        {/* Numbered services */}
+        <section className="bg-white pb-20 lg:pb-28">
+          <div className="container">
+            {SERVICES.map((service, i) => (
+              <div
+                key={service.title}
+                className={`border-t ${LINE} py-10 lg:py-14 grid grid-cols-1 lg:grid-cols-[8rem_1fr_1.4fr] gap-4 lg:gap-12 items-start ${
+                  i === SERVICES.length - 1 ? `border-b` : ""
+                }`}
+              >
+                <p className={`${HEADLINE} ${NAVY} text-4xl lg:text-5xl`}>{String(i + 1).padStart(3, "0")}.</p>
+                <h2 className={`${HEADLINE} ${NAVY} text-4xl lg:text-5xl`}>{service.title}</h2>
+                <div>
+                  <p className={`${SLATE} text-lg leading-relaxed mb-6`}>{service.description}</p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+                    {service.features.map((feature) => (
+                      <li key={feature} className={`flex items-center gap-2.5 ${NAVY} text-base`}>
+                        <Check size={16} className="shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      <section className="bg-white border-t border-[oklch(0.9_0.015_255)] py-16">
-        <div className="container text-center">
-          <h2 className="font-['Darker_Grotesque'] font-bold text-[oklch(0.18_0.06_255)] text-4xl lg:text-5xl uppercase leading-none mb-8">
-            Ready to Get Started?
-          </h2>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ec-btn-navy text-base px-8 py-4"
-          >
-            Book a Free Consultation <ChevronRight size={16} />
-          </a>
-        </div>
-      </section>
+        <BookingBand />
+      </main>
 
       <Footer />
     </div>
