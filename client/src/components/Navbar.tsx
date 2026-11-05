@@ -45,8 +45,8 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[oklch(0.18_0.06_255)] shadow-[0_4px_30px_oklch(0_0_0/0.4)]"
-            : "bg-[oklch(0.18_0.06_255)/90] backdrop-blur-md"
+            ? "bg-white shadow-[0_4px_24px_oklch(0.18_0.06_255/0.1)]"
+            : "bg-white/95 backdrop-blur-md border-b border-[oklch(0.9_0.015_255)]"
         }`}
       >
         <div className="container">
@@ -58,7 +58,7 @@ export default function Navbar() {
                 alt="East Consulting LLC Logo"
                 className="w-10 h-10 object-contain pointer-events-none"
               />
-              <span className="font-['Barlow_Condensed'] font-bold text-white text-lg tracking-wide uppercase leading-none">
+              <span className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-lg tracking-wide uppercase leading-none">
                 East Consulting
               </span>
             </Link>
@@ -70,10 +70,10 @@ export default function Navbar() {
                   <button
                     key={link.href}
                     onClick={() => handleAnchorClick(link.href)}
-                    className="font-['Barlow_Condensed'] font-600 text-sm tracking-widest uppercase text-white/80 hover:text-white transition-colors duration-200 relative group"
+                    className="font-['Barlow_Condensed'] font-600 text-sm tracking-widest uppercase text-[oklch(0.42_0.03_255)] hover:text-[oklch(0.32_0.09_255)] transition-colors duration-200 relative group"
                   >
                     {link.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full" />
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[oklch(0.18_0.06_255)] transition-all duration-200 group-hover:w-full" />
                   </button>
                 ) : (
                   <Link
@@ -81,13 +81,13 @@ export default function Navbar() {
                     href={link.href}
                     className={`font-['Barlow_Condensed'] font-600 text-sm tracking-widest uppercase transition-colors duration-200 relative group ${
                       isActive(link.href)
-                        ? "text-white"
-                        : "text-white/80 hover:text-white"
+                        ? "text-[oklch(0.18_0.06_255)]"
+                        : "text-[oklch(0.42_0.03_255)] hover:text-[oklch(0.32_0.09_255)]"
                     }`}
                   >
                     {link.label}
                     <span
-                      className={`absolute -bottom-1 left-0 h-0.5 bg-white transition-all duration-200 ${
+                      className={`absolute -bottom-1 left-0 h-0.5 bg-[oklch(0.18_0.06_255)] transition-all duration-200 ${
                         isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"
                       }`}
                     />
@@ -98,7 +98,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Toggle */}
             <button
-              className="lg:hidden text-white p-2"
+              className="lg:hidden text-[oklch(0.18_0.06_255)] p-2"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
@@ -110,7 +110,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-40 bg-[oklch(0.12_0.05_255)] transition-transform duration-300 ease-out lg:hidden ${
+        className={`fixed inset-0 z-40 bg-white transition-transform duration-300 ease-out lg:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -121,22 +121,22 @@ export default function Navbar() {
                 <button
                   key={link.href}
                   onClick={() => handleAnchorClick(link.href)}
-                  className="flex items-center justify-between py-4 border-b border-white/10 text-white font-['Barlow_Condensed'] font-600 text-2xl uppercase tracking-wider hover:text-white transition-colors text-left"
+                  className="flex items-center justify-between py-4 border-b border-[oklch(0.9_0.015_255)] text-[oklch(0.18_0.06_255)] font-['Barlow_Condensed'] font-600 text-2xl uppercase tracking-wider hover:text-[oklch(0.32_0.09_255)] transition-colors text-left"
                   style={{ transitionDelay: isOpen ? `${i * 50}ms` : "0ms" }}
                 >
                   {link.label}
-                  <ChevronRight size={20} className="text-white" />
+                  <ChevronRight size={20} className="text-[oklch(0.18_0.06_255)]" />
                 </button>
               ) : (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-between py-4 border-b border-white/10 text-white font-['Barlow_Condensed'] font-600 text-2xl uppercase tracking-wider hover:text-white transition-colors"
+                  className="flex items-center justify-between py-4 border-b border-[oklch(0.9_0.015_255)] text-[oklch(0.18_0.06_255)] font-['Barlow_Condensed'] font-600 text-2xl uppercase tracking-wider hover:text-[oklch(0.32_0.09_255)] transition-colors"
                   style={{ transitionDelay: isOpen ? `${i * 50}ms` : "0ms" }}
                 >
                   {link.label}
-                  <ChevronRight size={20} className="text-white" />
+                  <ChevronRight size={20} className="text-[oklch(0.18_0.06_255)]" />
                 </Link>
               )
             )}
