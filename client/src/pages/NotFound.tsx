@@ -15,7 +15,7 @@ export default function NotFound() {
         <div className="container">
           <div className="max-w-2xl">
             <div className="ec-section-label text-[oklch(0.42_0.03_255)] mb-5">404</div>
-            <h1 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-5xl lg:text-7xl uppercase leading-none mb-6">
+            <h1 className="font-['Darker_Grotesque'] font-bold text-[oklch(0.18_0.06_255)] text-5xl lg:text-7xl uppercase leading-none mb-6">
               Page Not <span className="text-[oklch(0.42_0.03_255)]">Found</span>
             </h1>
             <p className="text-[oklch(0.42_0.03_255)] text-lg leading-relaxed mb-10">

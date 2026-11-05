@@ -1,38 +1,36 @@
 /*
  * East Consulting LLC — Home Page
- * Design: navy & white, laid out after the owner's chosen reference site
- * Sections: Hero, CTA strip, What We Do, Formation Steps, Ready band, Consultation
+ * Layout follows the owner's GoHighLevel home page, in navy & white:
+ * Hero · Industries · Booking band
  */
 
-import { ChevronRight, ArrowRight, Phone, Mail, MapPin, CalendarDays } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ServiceCards from "@/components/ServiceCards";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { BOOKING_URL, CONTACT } from "@/lib/site";
+import { BOOKING_URL } from "@/lib/site";
 
 const NAVY = "text-[oklch(0.18_0.06_255)]";
-const MUTED = "text-[oklch(0.45_0.02_255)]";
+const HEADLINE = "font-['Darker_Grotesque'] font-bold leading-[0.95]";
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 function HeroSection() {
   return (
-    <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-white">
-      <div className="container relative z-10 pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div className="max-w-3xl">
-          <h1 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] uppercase leading-[0.95] mb-8 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl">
-            Business Formation in the Right Order.
-          </h1>
-          <p className="text-[oklch(0.42_0.03_255)] text-lg lg:text-xl leading-relaxed mb-10 max-w-xl">
-            We guide entrepreneurs through forming their business and setting up every foundational element, the right way, from day one.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="ec-btn-navy text-base px-8 py-4">
-              Book a Free Consultation <ChevronRight size={18} />
-            </a>
-            <Link href="/what-we-do" className="ec-btn-outline-navy text-base px-8 py-4">
-              What We Do <ArrowRight size={18} />
+    <section className="bg-[oklch(0.18_0.06_255)] text-white pt-32 pb-16 lg:pt-40 lg:pb-20">
+      <div className="container">
+        <h1 className={`${HEADLINE} text-6xl sm:text-7xl lg:text-8xl xl:text-9xl max-w-5xl mb-14 lg:mb-20`}>
+          Strategic goals for business growth
+        </h1>
+        <div className="border-t border-white/25 pt-10 grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-16 items-start">
+          <p className={`${HEADLINE} text-4xl lg:text-5xl`}>East Consulting LLC</p>
+          <div>
+            <p className="text-white/80 text-lg leading-relaxed mb-8">
+              We specialize in delivering targeted business formation services designed to empower entrepreneurs and
+              business leaders. With our guidance, watch your business flourish with clear, achievable business
+              formation solutions.
+            </p>
+            <Link href="/what-we-do" className="ec-btn-outline-light">
+              View all services <ArrowRight size={18} />
             </Link>
           </div>
         </div>
@@ -41,163 +39,55 @@ function HeroSection() {
   );
 }
 
-// ─── CTA strip ────────────────────────────────────────────────────────────────
-function CtaStrip() {
-  return (
-    <a
-      href={BOOKING_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block bg-white border-y border-[oklch(0.9_0.015_255)] hover:bg-[oklch(0.97_0.008_255)] transition-colors"
-    >
-      <div className={`container py-6 flex items-center justify-center gap-3 font-['Barlow_Condensed'] font-bold uppercase tracking-wider text-lg sm:text-xl text-center ${NAVY}`}>
-        Book Your Free Business Formation Consultation
-        <ArrowRight size={22} className="shrink-0" />
-      </div>
-    </a>
-  );
-}
-
-// ─── What We Do ───────────────────────────────────────────────────────────────
-function WhatWeDoSection() {
-  return (
-    <section id="services" className="py-20 lg:py-28 bg-white">
-      <div className="container">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14 reveal">
-          <div className="max-w-2xl">
-            <div className={`ec-section-label mb-4 ${NAVY}`}>What We Do</div>
-            <h2 className={`font-['Barlow_Condensed'] font-bold uppercase leading-none text-4xl lg:text-5xl xl:text-6xl ${NAVY}`}>
-              What Can East Consulting Do for You?
-            </h2>
-          </div>
-          <Link href="/what-we-do" className="ec-btn-outline-navy self-start lg:self-auto">
-            See What We Do <ChevronRight size={16} />
-          </Link>
-        </div>
-        <ServiceCards />
-      </div>
-    </section>
-  );
-}
-
-// ─── Formation Steps ──────────────────────────────────────────────────────────
-const steps = [
-  { title: "Choose Your Structure", desc: "Select the right structure for your business: LLC, Corporation, or Partnership." },
-  { title: "Verify Your Name", desc: "Name verification and a trademark check before you file." },
-  { title: "File With Your State", desc: "Secretary of State filing and your Articles of Incorporation." },
-  { title: "Registered Agent", desc: "Set up the Registered Agent your business needs on record." },
-  { title: "EIN Registration", desc: "Register your business with the IRS and get your EIN." },
-  { title: "Professional Presence", desc: "Domain, business email, address, phone number, and Google Business Profile." },
+// ─── Industries ───────────────────────────────────────────────────────────────
+const industries = [
+  "Technology and Startups",
+  "Healthcare",
+  "Retail and E-commerce",
+  "Manufacturing",
+  "Real Estate",
+  "Hospitality and Tourism",
+  "Education and Training",
+  "Non-Profit Organizations",
+  "Creative Industries",
 ];
 
-function StepsSection() {
+function IndustriesSection() {
   return (
-    <section className="py-20 lg:py-28 bg-white border-t border-[oklch(0.9_0.015_255)]">
-      <div className="container">
-        <div className="max-w-2xl mb-14 reveal">
-          <div className="ec-section-label text-[oklch(0.42_0.03_255)] mb-4">How It Works</div>
-          <h2 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] uppercase leading-none text-4xl lg:text-5xl xl:text-6xl mb-4">
-            From Idea to Established Business
+    <section className="bg-white py-20 lg:py-28">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <div>
+          <h2 className={`${HEADLINE} ${NAVY} text-5xl lg:text-6xl mb-8`}>
+            Bolstering business for clients in a variety of industries
           </h2>
-          <p className="text-[oklch(0.42_0.03_255)] text-lg leading-relaxed">
-            We take you through every step of forming and setting up your business, in order.
-          </p>
+          <Link href="/about" className="ec-btn-outline-navy">
+            About us <ArrowRight size={18} />
+          </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {steps.map((step, i) => (
-            <div key={step.title} className={`border border-[oklch(0.9_0.015_255)] bg-white p-7 reveal stagger-${(i % 3) + 1}`}>
-              <p className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)]/25 text-4xl leading-none mb-4">
-                {String(i + 1).padStart(2, "0")}
-              </p>
-              <h3 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-xl uppercase tracking-wide mb-2">{step.title}</h3>
-              <p className="text-[oklch(0.42_0.03_255)] text-sm leading-relaxed">{step.desc}</p>
-            </div>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+          {industries.map((industry) => (
+            <li key={industry} className={`flex items-center gap-3 text-lg ${NAVY} border-b border-[oklch(0.9_0.015_255)] pb-3`}>
+              <Check size={18} className="shrink-0" />
+              {industry}
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
 }
 
-// ─── Ready band ───────────────────────────────────────────────────────────────
-function ReadySection() {
+// ─── Booking band ─────────────────────────────────────────────────────────────
+function BookingBand() {
   return (
-    <section className="py-20 lg:py-24 bg-white border-t border-[oklch(0.9_0.015_255)]">
-      <div className="container text-center reveal">
-        <div className={`ec-section-label justify-center mb-4 ${NAVY}`}>Get Started</div>
-        <h2 className={`font-['Barlow_Condensed'] font-bold uppercase leading-none text-4xl lg:text-6xl mb-6 ${NAVY}`}>
-          I'm Ready to Start My Business
+    <section className="bg-[oklch(0.25_0.07_255)] text-white py-16 lg:py-20">
+      <div className="container flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+        <h2 className={`${HEADLINE} text-5xl lg:text-6xl max-w-2xl`}>
+          Better business, built right, from day one.
         </h2>
-        <p className={`text-lg leading-relaxed max-w-2xl mx-auto mb-10 ${MUTED}`}>
-          Book a free consultation and we'll walk you through forming your business the right way.
-        </p>
-        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="ec-btn-navy text-base px-8 py-4">
-          Book a Free Consultation <ChevronRight size={18} />
+        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="ec-btn-light self-start lg:self-auto">
+          Book a Consultation <ArrowRight size={18} />
         </a>
-      </div>
-    </section>
-  );
-}
-
-// ─── Free Consultation / Contact ──────────────────────────────────────────────
-function ContactSection() {
-  const details = [
-    { icon: Phone, title: "Office Phone", detail: CONTACT.phone, href: CONTACT.phoneHref },
-    { icon: Mail, title: "Email Us", detail: CONTACT.email, href: `mailto:${CONTACT.email}` },
-    { icon: MapPin, title: "Office Address", detail: `${CONTACT.addressLine1}, ${CONTACT.addressLine2}`, href: null },
-  ];
-
-  return (
-    <section id="contact" className="py-20 lg:py-28 bg-white border-t border-[oklch(0.9_0.015_255)]">
-      <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="reveal">
-            <div className="ec-section-label text-[oklch(0.42_0.03_255)] mb-4">East Consulting LLC</div>
-            <h2 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] uppercase leading-none text-4xl lg:text-6xl mb-6">
-              Get a Free Consultation
-            </h2>
-            <p className="text-[oklch(0.42_0.03_255)] text-base leading-relaxed mb-10">
-              Speak with us about the business you want to start, and we'll map out the right structure and setup for you.
-            </p>
-            <div className="space-y-6">
-              {details.map(({ icon: Icon, title, detail, href }) => (
-                <div key={title} className="flex items-center gap-4">
-                  <div className="w-12 h-12 border border-[oklch(0.9_0.015_255)] flex items-center justify-center shrink-0">
-                    <Icon size={20} className="text-[oklch(0.18_0.06_255)]" />
-                  </div>
-                  <div>
-                    <p className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-sm uppercase tracking-wide">{title}</p>
-                    {href ? (
-                      <a href={href} className="text-[oklch(0.42_0.03_255)] text-sm hover:text-[oklch(0.32_0.09_255)] transition-colors">{detail}</a>
-                    ) : (
-                      <p className="text-[oklch(0.42_0.03_255)] text-sm">{detail}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="reveal stagger-2 flex items-center justify-center">
-            <div className="bg-white p-10 text-center w-full max-w-md border border-[oklch(0.9_0.015_255)] shadow-[0_20px_60px_oklch(0.18_0.06_255/0.1)]">
-              <div className="w-16 h-16 bg-[oklch(0.18_0.06_255)] flex items-center justify-center mx-auto mb-6">
-                <CalendarDays size={30} className="text-white" />
-              </div>
-              <h3 className={`font-['Barlow_Condensed'] font-bold text-3xl uppercase mb-3 ${NAVY}`}>
-                Book Your Free Consultation
-              </h3>
-              <p className={`text-sm leading-relaxed mb-8 ${MUTED}`}>
-                Choose a time that works for you. No pressure, no obligation.
-              </p>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="ec-btn-navy text-base px-8 py-4 w-full justify-center">
-                Schedule My Consultation <ChevronRight size={18} />
-              </a>
-              <p className="text-[oklch(0.6_0.02_255)] text-xs mt-5">
-                You'll be taken to our secure booking page to select your preferred date &amp; time.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -205,18 +95,13 @@ function ContactSection() {
 
 // ─── Main Home Page ───────────────────────────────────────────────────────────
 export default function Home() {
-  useScrollReveal();
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main>
         <HeroSection />
-        <CtaStrip />
-        <WhatWeDoSection />
-        <StepsSection />
-        <ReadySection />
-        <ContactSection />
+        <IndustriesSection />
+        <BookingBand />
       </main>
       <Footer />
     </div>

@@ -31,7 +31,7 @@ export default function ServiceCards() {
             <div className="w-12 h-12 bg-[oklch(0.18_0.06_255)]/[0.07] flex items-center justify-center mb-5">
               <Icon size={24} className="text-[oklch(0.18_0.06_255)]" />
             </div>
-            <h3 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-2xl uppercase tracking-wide mb-3">
+            <h3 className="font-['Darker_Grotesque'] font-bold text-[oklch(0.18_0.06_255)] text-2xl uppercase tracking-wide mb-3">
               {service.title}
             </h3>
             <p className="text-[oklch(0.55_0.01_255)] text-base leading-relaxed mb-6">{service.description}</p>

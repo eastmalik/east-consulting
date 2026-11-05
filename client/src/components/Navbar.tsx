@@ -1,19 +1,19 @@
 /*
  * East Consulting LLC — Navbar Component
- * Design: navy & white
- * Dark navy background with white accent on active/hover states
- * Bold condensed typography, clean horizontal layout
+ * Design: white bar, navy text; logo left, menu centre-right, booking button right
+ * (layout follows the owner's GoHighLevel home page)
  */
 
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import { BOOKING_URL } from "@/lib/site";
 
 const navLinks = [
-  { label: "Home", href: "/", isAnchor: false },
-  { label: "What We Do", href: "/what-we-do", isAnchor: false },
-  { label: "Resources", href: "/resources", isAnchor: false },
-  { label: "Contact", href: "/#contact", isAnchor: true },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/what-we-do" },
+  { label: "Press", href: "/press" },
 ];
 
 export default function Navbar() {
@@ -27,73 +27,49 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleAnchorClick = (href: string) => {
-    setIsOpen(false);
-    const anchor = href.replace("/#", "#"); // "/#services" → "#services"
-    if (location === "/") {
-      const el = document.querySelector(anchor);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.location.href = href;
-    }
-  };
-
   const isActive = (href: string) => location === href;
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white shadow-[0_4px_24px_oklch(0.18_0.06_255/0.1)]"
-            : "bg-white/95 backdrop-blur-md border-b border-[oklch(0.9_0.015_255)]"
+        className={`fixed top-0 left-0 right-0 z-50 bg-white border-b border-[oklch(0.9_0.015_255)] transition-shadow duration-300 ${
+          scrolled ? "shadow-[0_4px_24px_oklch(0.18_0.06_255/0.1)]" : ""
         }`}
       >
         <div className="container">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group cursor-pointer">
+            <Link href="/" className="flex items-center gap-3 cursor-pointer">
               <img
                 src="/manus-storage/logo.svg"
                 alt="East Consulting LLC Logo"
                 className="w-10 h-10 object-contain pointer-events-none"
               />
-              <span className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-lg tracking-wide uppercase leading-none">
+              <span className="font-['Darker_Grotesque'] font-bold text-[oklch(0.18_0.06_255)] text-2xl leading-none">
                 East Consulting
               </span>
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) =>
-                link.isAnchor ? (
-                  <button
-                    key={link.href}
-                    onClick={() => handleAnchorClick(link.href)}
-                    className="font-['Barlow_Condensed'] font-600 text-sm tracking-widest uppercase text-[oklch(0.42_0.03_255)] hover:text-[oklch(0.32_0.09_255)] transition-colors duration-200 relative group"
-                  >
-                    {link.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[oklch(0.18_0.06_255)] transition-all duration-200 group-hover:w-full" />
-                  </button>
-                ) : (
+            <div className="hidden lg:flex items-center gap-10">
+              <div className="flex items-center gap-8">
+                {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`font-['Barlow_Condensed'] font-600 text-sm tracking-widest uppercase transition-colors duration-200 relative group ${
+                    className={`font-['Darker_Grotesque'] font-bold text-lg transition-colors duration-200 ${
                       isActive(link.href)
-                        ? "text-[oklch(0.18_0.06_255)]"
-                        : "text-[oklch(0.42_0.03_255)] hover:text-[oklch(0.32_0.09_255)]"
+                        ? "text-[oklch(0.18_0.06_255)] underline underline-offset-8 decoration-2"
+                        : "text-[oklch(0.42_0.03_255)] hover:text-[oklch(0.18_0.06_255)]"
                     }`}
                   >
                     {link.label}
-                    <span
-                      className={`absolute -bottom-1 left-0 h-0.5 bg-[oklch(0.18_0.06_255)] transition-all duration-200 ${
-                        isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"
-                      }`}
-                    />
                   </Link>
-                )
-              )}
+                ))}
+              </div>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="ec-btn-outline-navy">
+                Book a Consultation
+              </a>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -115,32 +91,27 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col h-full pt-20 px-6 pb-8">
-          <nav className="flex flex-col gap-2 flex-1">
-            {navLinks.map((link, i) =>
-              link.isAnchor ? (
-                <button
-                  key={link.href}
-                  onClick={() => handleAnchorClick(link.href)}
-                  className="flex items-center justify-between py-4 border-b border-[oklch(0.9_0.015_255)] text-[oklch(0.18_0.06_255)] font-['Barlow_Condensed'] font-600 text-2xl uppercase tracking-wider hover:text-[oklch(0.32_0.09_255)] transition-colors text-left"
-                  style={{ transitionDelay: isOpen ? `${i * 50}ms` : "0ms" }}
-                >
-                  {link.label}
-                  <ChevronRight size={20} className="text-[oklch(0.18_0.06_255)]" />
-                </button>
-              ) : (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-between py-4 border-b border-[oklch(0.9_0.015_255)] text-[oklch(0.18_0.06_255)] font-['Barlow_Condensed'] font-600 text-2xl uppercase tracking-wider hover:text-[oklch(0.32_0.09_255)] transition-colors"
-                  style={{ transitionDelay: isOpen ? `${i * 50}ms` : "0ms" }}
-                >
-                  {link.label}
-                  <ChevronRight size={20} className="text-[oklch(0.18_0.06_255)]" />
-                </Link>
-              )
-            )}
+          <nav className="flex flex-col gap-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="flex items-center justify-between py-4 border-b border-[oklch(0.9_0.015_255)] text-[oklch(0.18_0.06_255)] font-['Darker_Grotesque'] font-bold text-3xl"
+              >
+                {link.label}
+                <ChevronRight size={20} />
+              </Link>
+            ))}
           </nav>
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ec-btn-navy w-full justify-center mt-8"
+          >
+            Book a Consultation
+          </a>
         </div>
       </div>
     </>
