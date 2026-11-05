@@ -21,19 +21,19 @@ export default function WhatWeDo() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <section className="ec-navy-gradient pt-28 pb-16">
+      <section className="bg-white pt-28 pb-16">
         <div className="container">
-          <div className="flex items-center gap-2 text-white/40 text-sm mb-6">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <div className="flex items-center gap-2 text-[oklch(0.55_0.02_255)] text-sm mb-6">
+            <Link href="/" className="hover:text-[oklch(0.32_0.09_255)] transition-colors">Home</Link>
             <ChevronRight size={14} />
-            <span className="text-white/70">What We Do</span>
+            <span className="text-[oklch(0.42_0.03_255)]">What We Do</span>
           </div>
           <div className="max-w-3xl">
-            <div className="ec-section-label text-white/70 mb-5">What We Do</div>
-            <h1 className="font-['Barlow_Condensed'] font-bold text-white text-5xl lg:text-7xl uppercase leading-none mb-6">
-              Business Formation, <span className="text-white/75">Done Right</span>
+            <div className="ec-section-label text-[oklch(0.42_0.03_255)] mb-5">What We Do</div>
+            <h1 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-5xl lg:text-7xl uppercase leading-none mb-6">
+              Business Formation, <span className="text-[oklch(0.42_0.03_255)]">Done Right</span>
             </h1>
-            <p className="text-white/65 text-lg leading-relaxed">
+            <p className="text-[oklch(0.42_0.03_255)] text-lg leading-relaxed">
               East Consulting LLC helps entrepreneurs form their business and set up every foundational element the right way, from day one.
             </p>
           </div>
@@ -46,16 +46,16 @@ export default function WhatWeDo() {
         </div>
       </section>
 
-      <section className="ec-navy-gradient py-16">
+      <section className="bg-white border-t border-[oklch(0.9_0.015_255)] py-16">
         <div className="container text-center">
-          <h2 className="font-['Barlow_Condensed'] font-bold text-white text-4xl lg:text-5xl uppercase leading-none mb-8">
+          <h2 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-4xl lg:text-5xl uppercase leading-none mb-8">
             Ready to Get Started?
           </h2>
           <a
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="ec-btn-light text-base px-8 py-4"
+            className="ec-btn-navy text-base px-8 py-4"
           >
             Book a Free Consultation <ChevronRight size={16} />
           </a>
