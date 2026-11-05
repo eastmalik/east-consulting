@@ -1,129 +1,76 @@
 /*
  * East Consulting LLC — Footer Component
- * Design: navy & white
- * Dark navy background, white accents, clean column layout
+ * Design: navy footer, white text; Quick Links · Contact Us · Legal
+ * (layout follows the owner's GoHighLevel home page)
  */
 
-import { ChevronRight, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "wouter";
 import { BOOKING_URL, CONTACT } from "@/lib/site";
 
-const linkColumns = [
-  {
-    heading: "Quick Links",
-    links: [
-      { label: "Home", href: "/" },
-      { label: "What We Do", href: "/what-we-do" },
-      { label: "Resources", href: "/resources" },
-    ],
-  },
-  {
-    heading: "Legals",
-    links: [
-      { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Terms of Service", href: "/terms-of-service" },
-      { label: "Terms & Conditions", href: "/terms-and-conditions" },
-    ],
-  },
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/what-we-do" },
+  { label: "Press", href: "/press" },
 ];
+
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+];
+
+const headingClass = "font-['Darker_Grotesque'] font-bold text-2xl text-white mb-4";
+const linkClass = "text-white/75 hover:text-white text-base transition-colors";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-[oklch(0.9_0.015_255)] text-[oklch(0.18_0.06_255)]">
-      <div className="container py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-
-          {/* Brand Column */}
+    <footer className="bg-[oklch(0.18_0.06_255)] text-white">
+      <div className="container py-14 lg:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
           <div>
-            <Link href="/" className="flex items-center gap-3 mb-5 cursor-pointer">
-              <img
-                src="/manus-storage/logo.svg"
-                alt="East Consulting LLC Logo"
-                className="w-10 h-10 object-contain pointer-events-none"
-              />
-              <div className="flex flex-col leading-none">
-                <span className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-lg uppercase tracking-wide">
-                  East Consulting
-                </span>
-                <span className="text-[oklch(0.42_0.03_255)] text-xs tracking-widest uppercase">LLC</span>
-              </div>
-            </Link>
-            <p className="text-[oklch(0.42_0.03_255)] text-sm leading-relaxed">
-              Helping entrepreneurs form their businesses the right way, from day one.
-            </p>
-          </div>
-
-          {linkColumns.map(({ heading, links }) => (
-            <div key={heading}>
-              <h4 className="font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest text-[oklch(0.18_0.06_255)] mb-5">
-                {heading}
-              </h4>
-              <ul className="space-y-3">
-                {links.map(({ label, href }) => (
-                  <li key={label}>
-                    <Link
-                      href={href}
-                      className="text-[oklch(0.42_0.03_255)] hover:text-[oklch(0.32_0.09_255)] text-sm transition-colors duration-200 flex items-center gap-2 group"
-                    >
-                      <ChevronRight size={12} className="text-[oklch(0.18_0.06_255)] opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-          {/* Contact Column */}
-          <div>
-            <h4 className="font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-widest text-[oklch(0.18_0.06_255)] mb-5">
-              Contact
-            </h4>
-            <ul className="space-y-4 mb-6">
-              <li className="flex items-start gap-3">
-                <Mail size={16} className="text-[oklch(0.18_0.06_255)] mt-0.5 shrink-0" />
-                <a href={`mailto:${CONTACT.email}`} className="text-[oklch(0.42_0.03_255)] hover:text-[oklch(0.32_0.09_255)] text-sm transition-colors">
-                  {CONTACT.email}
+            <h4 className={headingClass}>Quick Links</h4>
+            <ul className="space-y-2.5">
+              {quickLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <Link href={href} className={linkClass}>{label}</Link>
+                </li>
+              ))}
+              <li>
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                  Book a Consultation
                 </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone size={16} className="text-[oklch(0.18_0.06_255)] mt-0.5 shrink-0" />
-                <a href={CONTACT.phoneHref} className="text-[oklch(0.42_0.03_255)] hover:text-[oklch(0.32_0.09_255)] text-sm transition-colors">
-                  {CONTACT.phone} — Office
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-[oklch(0.18_0.06_255)] mt-0.5 shrink-0" />
-                <span className="text-[oklch(0.42_0.03_255)] text-sm">{CONTACT.addressLine1}<br />{CONTACT.addressLine2}</span>
               </li>
             </ul>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[oklch(0.18_0.06_255)] text-sm font-semibold hover:underline inline-flex items-center gap-1"
-            >
-              Book a Free Consultation <ChevronRight size={14} />
-            </a>
           </div>
 
+          <div>
+            <h4 className={headingClass}>Contact Us</h4>
+            <ul className="space-y-2.5 text-white/75 text-base">
+              <li className="text-white font-semibold">East Consulting LLC</li>
+              <li><a href={CONTACT.phoneHref} className={linkClass}>{CONTACT.phone}</a></li>
+              <li><a href={`mailto:${CONTACT.email}`} className={linkClass}>{CONTACT.email}</a></li>
+              <li>{CONTACT.addressLine1}<br />{CONTACT.addressLine2}</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className={headingClass}>Legal</h4>
+            <ul className="space-y-2.5">
+              {legalLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <Link href={href} className={linkClass}>{label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-[oklch(0.9_0.015_255)]">
-        <div className="container py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[oklch(0.55_0.02_255)] text-xs">
-            © {new Date().getFullYear()} East Consulting LLC. All rights reserved.
+      <div className="border-t border-white/15">
+        <div className="container py-5">
+          <p className="text-white/60 text-sm">
+            © {new Date().getFullYear()} East Consulting LLC. All Rights Reserved.
           </p>
-          <div className="flex gap-6">
-            <Link href="/privacy-policy" className="text-[oklch(0.55_0.02_255)] hover:text-[oklch(0.32_0.09_255)] text-xs transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms-of-service" className="text-[oklch(0.55_0.02_255)] hover:text-[oklch(0.32_0.09_255)] text-xs transition-colors">
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

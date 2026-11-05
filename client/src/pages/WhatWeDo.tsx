@@ -30,7 +30,7 @@ export default function WhatWeDo() {
           </div>
           <div className="max-w-3xl">
             <div className="ec-section-label text-[oklch(0.42_0.03_255)] mb-5">What We Do</div>
-            <h1 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-5xl lg:text-7xl uppercase leading-none mb-6">
+            <h1 className="font-['Darker_Grotesque'] font-bold text-[oklch(0.18_0.06_255)] text-5xl lg:text-7xl uppercase leading-none mb-6">
               Business Formation, <span className="text-[oklch(0.42_0.03_255)]">Done Right</span>
             </h1>
             <p className="text-[oklch(0.42_0.03_255)] text-lg leading-relaxed">
@@ -48,7 +48,7 @@ export default function WhatWeDo() {
 
       <section className="bg-white border-t border-[oklch(0.9_0.015_255)] py-16">
         <div className="container text-center">
-          <h2 className="font-['Barlow_Condensed'] font-bold text-[oklch(0.18_0.06_255)] text-4xl lg:text-5xl uppercase leading-none mb-8">
+          <h2 className="font-['Darker_Grotesque'] font-bold text-[oklch(0.18_0.06_255)] text-4xl lg:text-5xl uppercase leading-none mb-8">
             Ready to Get Started?
           </h2>
           <a
