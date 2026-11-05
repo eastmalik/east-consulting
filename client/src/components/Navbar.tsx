@@ -58,14 +58,9 @@ export default function Navbar() {
                 alt="East Consulting LLC Logo"
                 className="w-10 h-10 object-contain pointer-events-none"
               />
-              <div className="flex flex-col leading-none">
-                <span className="font-['Barlow_Condensed'] font-bold text-white text-lg tracking-wide uppercase">
-                  East Consulting
-                </span>
-                <span className="font-['Source_Sans_3'] text-white/60 text-xs tracking-widest uppercase">
-                  LLC
-                </span>
-              </div>
+              <span className="font-['Barlow_Condensed'] font-bold text-white text-lg tracking-wide uppercase leading-none">
+                East Consulting
+              </span>
             </Link>
 
             {/* Desktop Nav */}
