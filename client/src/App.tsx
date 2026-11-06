@@ -17,7 +17,6 @@ function Router() {
       <Route path={"/what-we-do"} component={WhatWeDo} />
       <Route path={"/about"} component={AboutUs} />
       <Route path={"/book"} component={Book} />
-      <Route path={"/press"}>{() => <ComingSoon title="Press" />}</Route>
       <Route path={"/resources"}>{() => <ComingSoon title="Resources" />}</Route>
       <Route path={"/privacy-policy"}>{() => <ComingSoon title="Privacy Policy" />}</Route>
       <Route path={"/terms-of-service"}>{() => <ComingSoon title="Terms of Service" />}</Route>

@@ -32,7 +32,7 @@ See README.md for the stack, deploy workflow and DNS.
 
 - Home page layout copies the owner's GoHighLevel home page
   (sites.leadconnectorhq.com/preview/PPY90ndMBUWGYtQjRfIm), in navy & white,
-  no photos: white menu bar (Home, About, Services, Press + "Book a
+  no photos: white menu bar (Home, About, Services + "Book a
   Consultation"), navy hero ("Strategic goals for business growth"), white
   industries list, navy booking band, navy footer (Quick Links, Contact Us,
   Legal). Fonts: Darker Grotesque (headings) and Manrope (body).
@@ -58,8 +58,9 @@ See README.md for the stack, deploy workflow and DNS.
   goes to `/book` (BOOK_PATH in `client/src/lib/site.ts`).
 - The form collects contact details. It was removed in 2026 only for A2P
   texting compliance; if the owner restarts texting / A2P, review it again.
-- "Coming soon" placeholders: Press, Resources, Privacy Policy, Terms of
-  Service, Terms & Conditions. `/contact` redirects to Home.
+- "Coming soon" placeholders: Resources, Privacy Policy, Terms of Service,
+  Terms & Conditions. `/contact` redirects to Home. There is no Press page
+  (owner removed it); `/press` shows the 404 page.
 - About (`/about`) follows the GHL About page
   (sites.leadconnectorhq.com/preview/rsPJnGbOXFjbQeJvKlmC): navy hero with the
   mission, "Why choose us?", who we work with, booking band. Wording rewritten

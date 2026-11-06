@@ -11,7 +11,6 @@ const quickLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/what-we-do" },
-  { label: "Press", href: "/press" },
 ];
 
 const legalLinks = [
