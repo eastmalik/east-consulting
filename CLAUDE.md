@@ -56,10 +56,22 @@ See README.md for the stack, deploy workflow and DNS.
   the calendar (malik-east-personal-calendar-70ch6hbpr); a link to the
   calendar sits under the form. Every "Book a Consultation" button on the site
   goes to `/book` (BOOK_PATH in `client/src/lib/site.ts`).
-- The form collects contact details. It was removed in 2026 only for A2P
-  texting compliance; if the owner restarts texting / A2P, review it again.
-- "Coming soon" placeholders: Resources, Privacy Policy, Terms of Service,
-  Terms & Conditions. `/contact` redirects to Home. There is no Press page
+- The owner is doing texting (A2P 10DLC). The booking form is the site's
+  ONLY SMS opt-in: an optional, unticked consent checkbox set up inside
+  GoHighLevel. Don't add a second opt-in (e.g. the chat widget) on top of it
+  ("double opt-in" gets A2P rejected). If the opt-in changes, update the
+  Privacy Policy and Terms & Conditions to match.
+- Privacy Policy (`/privacy-policy`) and Terms & Conditions
+  (`/terms-and-conditions`) use the section format of
+  betdavidconsulting.com/privacy.html (owner's choice) with East Consulting's
+  real facts, plus the SMS language A2P requires: the Privacy Policy keeps
+  GoHighLevel's exact non-sharing sentences ("No mobile information will be
+  shared..." / "...excluding aggregators and providers of the text message
+  services."); the Terms have the SMS program terms (sender, opt-in checkbox,
+  message types, frequency, rates, STOP/START/HELP, carrier liability).
+  Shared layout: `client/src/components/LegalPage.tsx`. `/terms-of-service`
+  redirects to `/terms-and-conditions`.
+- "Coming soon" placeholder: Resources. `/contact` redirects to Home. There is no Press page
   (owner removed it); `/press` shows the 404 page.
 - About (`/about`) follows the GHL About page
   (sites.leadconnectorhq.com/preview/rsPJnGbOXFjbQeJvKlmC): navy hero with the
@@ -70,8 +82,7 @@ See README.md for the stack, deploy workflow and DNS.
   clients' permission.
 - Content must stay business formation only: no credit, funding, capital,
   lending, tax or insurance content.
-- No chat widget and no 7Band family footer for now; the owner may add the
-  chat widget back later (it would be the site's only SMS opt-in).
+- No chat widget and no 7Band family footer for now.
 - Colors: navy & white only. The gold compass logo and favicon are the only
   gold. Button and card styles are in `client/src/index.css`
   (`ec-btn-navy`, `ec-btn-outline-navy` on white; `ec-btn-light`,
