@@ -7,7 +7,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { Link, useLocation } from "wouter";
-import { BOOKING_URL } from "@/lib/site";
+import { BOOK_PATH } from "@/lib/site";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -67,9 +67,9 @@ export default function Navbar() {
                   </Link>
                 ))}
               </div>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="ec-btn-outline-navy">
+              <Link href={BOOK_PATH} className="ec-btn-outline-navy">
                 Book a Consultation
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -104,14 +104,13 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href={BOOK_PATH}
+            onClick={() => setIsOpen(false)}
             className="ec-btn-navy w-full justify-center mt-8"
           >
             Book a Consultation
-          </a>
+          </Link>
         </div>
       </div>
     </>

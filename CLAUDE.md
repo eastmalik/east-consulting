@@ -22,7 +22,8 @@ See README.md for the stack, deploy workflow and DNS.
   (historical folder name). Never link to images hosted on another platform.
 - Keep one contact email (`support@eastconsultingllc.com`), one phone number
   (`(678) 325-4094`) and one address (850 N. Jefferson Street, Jackson, MS
-  39202). They live in `client/src/lib/site.ts`, along with the booking link.
+  39202). They live in `client/src/lib/site.ts`, along with the booking
+  form and calendar links.
 - Keep the repository public (free GitHub Pages requires it).
 - Never advise changing Hostinger email DNS records (MX, hostingermail,
   autodiscover, autoconfig, DKIM, SPF, DMARC).
@@ -48,6 +49,15 @@ See README.md for the stack, deploy workflow and DNS.
   only (never the template's eight sample services), then the shared booking
   band. The services live in `client/src/lib/services.ts`, worded exactly as
   the owner wrote them; the band is `client/src/components/BookingBand.tsx`.
+- Book a Consultation (`/book`) follows the GHL booking page
+  (sites.leadconnectorhq.com/preview/CG8gYc0iFxmcTJb3T4KN): a white card with
+  the owner's GoHighLevel form (ID tDLheLWGJli1VwLbzgLi, embedded with GHL's
+  iframe code + form_embed.js). After the form, GoHighLevel sends people to
+  the calendar (malik-east-personal-calendar-70ch6hbpr); a link to the
+  calendar sits under the form. Every "Book a Consultation" button on the site
+  goes to `/book` (BOOK_PATH in `client/src/lib/site.ts`).
+- The form collects contact details. It was removed in 2026 only for A2P
+  texting compliance; if the owner restarts texting / A2P, review it again.
 - "Coming soon" placeholders: Press, Resources, Privacy Policy, Terms of
   Service, Terms & Conditions. `/contact` redirects to Home.
 - About (`/about`) follows the GHL About page
