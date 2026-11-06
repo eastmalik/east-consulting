@@ -5,7 +5,7 @@
  */
 
 import { Link } from "wouter";
-import { BOOKING_URL, CONTACT } from "@/lib/site";
+import { BOOK_PATH, CONTACT } from "@/lib/site";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -36,9 +36,9 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                <Link href={BOOK_PATH} className={linkClass}>
                   Book a Consultation
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

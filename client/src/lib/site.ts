@@ -1,4 +1,9 @@
-export const BOOKING_URL = "https://api.leadconnectorhq.com/widget/booking/22Ig6MGZ2XELV3Qi9Zr3";
+// "Book a Consultation" buttons go to the on-site booking page (/book), which
+// embeds the GoHighLevel form; the form sends people on to the calendar.
+export const BOOK_PATH = "/book";
+export const BOOKING_FORM_ID = "tDLheLWGJli1VwLbzgLi";
+export const BOOKING_FORM_URL = `https://api.leadconnectorhq.com/widget/form/${BOOKING_FORM_ID}`;
+export const BOOKING_CALENDAR_URL = "https://api.leadconnectorhq.com/widget/bookings/malik-east-personal-calendar-70ch6hbpr";
 
 export const CONTACT = {
   email: "support@eastconsultingllc.com",
