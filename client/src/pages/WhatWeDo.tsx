@@ -32,8 +32,9 @@ export default function WhatWeDo() {
             <h1 className={`${HEADLINE} ${NAVY} text-6xl sm:text-7xl lg:text-8xl`}>Our Services</h1>
             <p className={`${SLATE} text-lg leading-relaxed lg:pt-4`}>
               Our services cover every foundational step of starting your business: forming the right legal structure
-              with your state, and setting up the professional identity a legitimate business needs. Whether you're
-              starting from an idea or formalizing a business you already run, we guide you every step of the way.
+              with your state, setting up the professional identity a legitimate business needs, and putting the
+              automation in place that keeps it running. Whether you're starting from an idea or formalizing a business
+              you already run, we guide you every step of the way.
             </p>
           </div>
         </section>
@@ -49,7 +50,14 @@ export default function WhatWeDo() {
                 }`}
               >
                 <p className={`${HEADLINE} ${NAVY} text-4xl lg:text-5xl`}>{String(i + 1).padStart(3, "0")}.</p>
-                <h2 className={`${HEADLINE} ${NAVY} text-4xl lg:text-5xl`}>{service.title}</h2>
+                <div>
+                  <h2 className={`${HEADLINE} ${NAVY} text-4xl lg:text-5xl`}>{service.title}</h2>
+                  {(service.price || service.timeline) && (
+                    <p className={`${NAVY} font-semibold text-lg mt-4`}>
+                      {[service.price, service.timeline].filter(Boolean).join(" · ")}
+                    </p>
+                  )}
+                </div>
                 <div>
                   <p className={`${SLATE} text-lg leading-relaxed mb-6`}>{service.description}</p>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">

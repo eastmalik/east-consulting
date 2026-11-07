@@ -27,7 +27,8 @@ const sections: LegalSection[] = [
       <>
         <p>
           East Consulting LLC provides business formation consulting: guidance on business entity formation and on
-          professional business setup.
+          professional business setup. We also set up business automation systems (booking forms, calendars,
+          pipelines, and automated emails) for our clients.
         </p>
         <p>
           Our services are guidance and consulting. We are not a law firm and do not provide legal advice. For legal
