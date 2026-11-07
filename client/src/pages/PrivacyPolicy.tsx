@@ -36,7 +36,7 @@ const sections: LegalSection[] = [
         <ul>
           <li>respond to your inquiry and schedule your consultation;</li>
           <li>send appointment confirmations, reminders, and updates about your consultation;</li>
-          <li>provide the business formation services you ask us for; and</li>
+          <li>provide the services you ask us for; and</li>
           <li>answer your questions and provide customer support.</li>
         </ul>
       </>
