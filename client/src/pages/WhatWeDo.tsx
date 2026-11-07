@@ -49,15 +49,8 @@ export default function WhatWeDo() {
                   i === SERVICES.length - 1 ? `border-b` : ""
                 }`}
               >
-                <p className={`${HEADLINE} ${NAVY} text-4xl lg:text-5xl`}>{String(i + 1).padStart(3, "0")}.</p>
-                <div>
-                  <h2 className={`${HEADLINE} ${NAVY} text-4xl lg:text-5xl`}>{service.title}</h2>
-                  {(service.price || service.timeline) && (
-                    <p className={`${NAVY} font-semibold text-lg mt-4`}>
-                      {[service.price, service.timeline].filter(Boolean).join(" · ")}
-                    </p>
-                  )}
-                </div>
+                <p className={`${HEADLINE} ${NAVY} text-4xl lg:text-5xl`}>{i + 1}.</p>
+                <h2 className={`${HEADLINE} ${NAVY} text-4xl lg:text-5xl`}>{service.title}</h2>
                 <div>
                   <p className={`${SLATE} text-lg leading-relaxed mb-6`}>{service.description}</p>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
