@@ -52,17 +52,17 @@ See README.md for the stack, deploy workflow and DNS.
 - GoHighLevel is the template for every page. Services (`/what-we-do`)
   follows the GHL Services page
   (sites.leadconnectorhq.com/preview/Ap8jXaAv93B4dUnROPOs): "Our Services"
-  intro, then numbered rows (001., 002., 003.) for the owner's real services
+  intro, then numbered rows (1., 2., 3.) for the owner's real services
   only (never the template's eight sample services), then the shared booking
-  band. The services live in `client/src/lib/services.ts` (001/002 worded
+  band. The services live in `client/src/lib/services.ts` (1/2 worded
   exactly as the owner wrote them); the band is
   `client/src/components/BookingBand.tsx`.
-- 003. Business Automation Setup (added Nov 2026): the GoHighLevel automation
+- 3. Business Automation Setup (added Nov 2026): the GoHighLevel automation
   system from the owner's Miro board "THE FLOW" (booking form & calendar,
   pipelines, automated email workflows, reminders & no-show follow-up), set up
-  for other entrepreneurs. Shows "Set up in 1 week". The owner took the $500
-  price off the site: don't show prices unless the owner asks. Don't add
-  claims about competitors' prices.
+  for other entrepreneurs. The owner took the $500 price and the "set up in
+  1 week" line off the site: don't show prices or timelines unless the owner
+  asks. Don't add claims about competitors' prices.
 - Planned, not yet on the site: a $19.99 guide (the owner's "map to the
   business service puzzle"). Needs its name and a payment link (e.g. a
   GoHighLevel order form) from the owner before it goes up.
