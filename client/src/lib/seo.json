@@ -1,0 +1,41 @@
+{
+  "site": "https://www.eastconsultingllc.com",
+  "pages": [
+    {
+      "path": "/",
+      "title": "East Consulting LLC | Business Formation Consulting",
+      "description": "East Consulting LLC helps entrepreneurs form their businesses the right way: business entity formation and professional business setup."
+    },
+    {
+      "path": "/what-we-do",
+      "title": "Services | East Consulting LLC",
+      "description": "Business entity formation and professional business setup: name checks, Secretary of State filing, registered agent, EIN, domain, email and Google Business Profile."
+    },
+    {
+      "path": "/about",
+      "title": "About Us | East Consulting LLC",
+      "description": "East Consulting LLC is a business formation consulting firm in Jackson, Mississippi, helping entrepreneurs start their businesses built right from day one."
+    },
+    {
+      "path": "/book",
+      "title": "Book a Consultation | East Consulting LLC",
+      "description": "Book a business formation consultation with East Consulting LLC."
+    },
+    {
+      "path": "/privacy-policy",
+      "title": "Privacy Policy | East Consulting LLC",
+      "description": "How East Consulting LLC collects, uses and protects your information, including text messaging."
+    },
+    {
+      "path": "/terms-and-conditions",
+      "title": "Terms & Conditions | East Consulting LLC",
+      "description": "Terms & Conditions for East Consulting LLC, including our text messaging (SMS) terms."
+    },
+    {
+      "path": "/resources",
+      "title": "Resources | East Consulting LLC",
+      "description": "Business formation resources from East Consulting LLC. Coming soon.",
+      "noSitemap": true
+    }
+  ]
+}

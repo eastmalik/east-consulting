@@ -33,10 +33,8 @@ jobs:
       - name: Build
         run: pnpm build
 
-      # Pages has no server-side routing, so direct links to /about etc. would
-      # 404 without this. Pages serves 404.html for unknown paths.
-      - name: Add SPA fallback
-        run: cp dist/public/index.html dist/public/404.html
+      # `pnpm build` also writes a real index.html for every page, 404.html,
+      # sitemap.xml and robots.txt (scripts/seo-pages.mjs).
 
       - uses: actions/upload-pages-artifact@v3
         with:

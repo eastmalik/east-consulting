@@ -88,3 +88,12 @@ See README.md for the stack, deploy workflow and DNS.
   (`ec-btn-navy`, `ec-btn-outline-navy` on white; `ec-btn-light`,
   `ec-btn-outline-light` on navy; `ec-card`).
 - The owner wants it simple: no photos unless they ask.
+- Google / SEO: each page's Google title and description live in
+  `client/src/lib/seo.json`. `pnpm build` runs `scripts/seo-pages.mjs`, which
+  writes a real `<page>.html` per page (so GitHub Pages serves them as normal
+  pages, not "not found"), a `noindex` 404.html, `sitemap.xml` and `robots.txt`.
+  Add new pages to seo.json. Business details for Google (name, address,
+  phone, email) are in the JSON-LD block in `client/index.html`; keep them in
+  step with `site.ts`. Old credit-era results on Google come from Google's
+  cache / Google Business Profile, not the site: fix them in Search Console
+  and the Business Profile.

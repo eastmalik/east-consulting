@@ -1,7 +1,9 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Redirect, Route, Switch } from "wouter";
+import { useEffect } from "react";
+import { Redirect, Route, Switch, useLocation } from "wouter";
+import seo from "./lib/seo.json";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -11,6 +13,19 @@ import Book from "./pages/Book";
 import ComingSoon from "./pages/ComingSoon";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
+
+// Keeps the tab title and description right when moving between pages
+// (each page's own file already has them for search engines).
+function PageMeta() {
+  const [location] = useLocation();
+  useEffect(() => {
+    const page = seo.pages.find((p) => p.path === location);
+    if (!page) return;
+    document.title = page.title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", page.description);
+  }, [location]);
+  return null;
+}
 
 function Router() {
   return (
@@ -37,6 +52,7 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
+          <PageMeta />
           <Router />
         </TooltipProvider>
       </ThemeProvider>
