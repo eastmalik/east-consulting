@@ -31,10 +31,10 @@ export default function WhatWeDo() {
           <div className="container grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-20 items-start">
             <h1 className={`${HEADLINE} ${NAVY} text-6xl sm:text-7xl lg:text-8xl`}>Our Services</h1>
             <p className={`${SLATE} text-lg leading-relaxed lg:pt-4`}>
-              Our services cover every foundational step of starting your business: forming the right legal structure
-              with your state, setting up the professional identity a legitimate business needs, and putting the
-              automation in place that keeps it running. Whether you're starting from an idea or formalizing a business
-              you already run, we guide you every step of the way.
+              Wherever your business is today, we help you take the next step: forming the right legal structure with
+              your state, setting up the professional identity customers trust, and putting automation in place so you
+              can focus on your clients. Whether you're starting from an idea or already running your business, we
+              guide you every step of the way.
             </p>
           </div>
         </section>

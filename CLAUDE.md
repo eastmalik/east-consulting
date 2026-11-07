@@ -33,9 +33,16 @@ See README.md for the stack, deploy workflow and DNS.
 - Home page layout copies the owner's GoHighLevel home page
   (sites.leadconnectorhq.com/preview/PPY90ndMBUWGYtQjRfIm), in navy & white,
   no photos: white menu bar (Home, About, Services + "Book a
-  Consultation"), navy hero ("Strategic goals for business growth"), white
-  industries list, navy booking band, navy footer (Quick Links, Contact Us,
-  Legal). Fonts: Darker Grotesque (headings) and Manrope (body).
+  Consultation"), navy hero, white industries list ("We work with businesses
+  in every industry"), navy booking band, navy footer (Quick Links, Contact
+  Us, Legal). Fonts: Darker Grotesque (headings) and Manrope (body).
+- Wording (all pages) puts the customer first, following the structure of
+  the owner's Arise Credit Pro site (owner's choice; structure only, never
+  its credit content): the customer's goal ("You bring the vision. We help
+  you build it right."), "Does this sound like you?" pain-point cards, a
+  "you're not alone" quote, "Your path, in three steps", then book a
+  consultation. Write new copy the same way: "you" first, plain words. Don't
+  call the consultation free unless the owner says it is.
 - Its template wording was adjusted to the rules below: "coaching" became
   "business formation", "Financial Services" was dropped from the industry
   list, and "higher revenue" became "Better business, built right, from day
@@ -53,8 +60,9 @@ See README.md for the stack, deploy workflow and DNS.
 - 003. Business Automation Setup (added Nov 2026): the GoHighLevel automation
   system from the owner's Miro board "THE FLOW" (booking form & calendar,
   pipelines, automated email workflows, reminders & no-show follow-up), set up
-  for other entrepreneurs. Owner's price: $500 one-time, set up in 1 week;
-  shown on the Services page. Don't add claims about competitors' prices.
+  for other entrepreneurs. Shows "Set up in 1 week". The owner took the $500
+  price off the site: don't show prices unless the owner asks. Don't add
+  claims about competitors' prices.
 - Planned, not yet on the site: a $19.99 guide (the owner's "map to the
   business service puzzle"). Needs its name and a payment link (e.g. a
   GoHighLevel order form) from the owner before it goes up.
