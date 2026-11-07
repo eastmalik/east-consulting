@@ -1,6 +1,6 @@
 // The owner's services. 001 and 002 are worded exactly as the owner wrote them.
 // 003 is the business automation system from the owner's Miro board ("THE FLOW"),
-// priced by the owner: $500 one-time, set up in 1 week.
+// set up in 1 week. (Owner removed the $500 price from the site.)
 type Service = { title: string; description: string; features: string[]; price?: string; timeline?: string };
 
 export const SERVICES: Service[] = [
@@ -19,9 +19,8 @@ export const SERVICES: Service[] = [
   {
     title: "Business Automation Setup",
     description:
-      "We set up your business automation system in GoHighLevel: a booking form and calendar, pipelines that track every lead, and automated emails that confirm, remind, and follow up for you, so no client slips through the cracks.",
+      "Stop chasing leads by hand. We set up your business automation system in GoHighLevel: a booking form and calendar, pipelines that track every lead, and automated emails that confirm, remind, and follow up for you, so no client slips through the cracks.",
     features: ["Booking form & calendar", "Lead pipelines", "Automated email workflows", "Reminders & no-show follow-up"],
-    price: "$500 one-time",
     timeline: "Set up in 1 week",
   },
 ];

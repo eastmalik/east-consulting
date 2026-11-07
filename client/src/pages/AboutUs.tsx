@@ -35,8 +35,8 @@ export default function AboutUs() {
               <p className={`${HEADLINE} text-4xl lg:text-5xl`}>East Consulting LLC</p>
               <div>
                 <p className="text-white/80 text-lg leading-relaxed mb-8">
-                  Our mission at East Consulting LLC is to empower entrepreneurs and business leaders by guiding them
-                  through forming their business and setting up every foundational element, the right way, from day one.
+                  Our mission is simple: help entrepreneurs like you start and run a business that's built right from
+                  day one, so you can spend your time on the work you love, not the paperwork.
                 </p>
                 <Link href="/what-we-do" className="ec-btn-outline-light">
                   View all services <ArrowRight size={18} />
@@ -51,9 +51,9 @@ export default function AboutUs() {
           <div className="container grid grid-cols-1 lg:grid-cols-[1fr_1.75fr] gap-8 lg:gap-16 items-start">
             <h2 className={`${HEADLINE} ${NAVY} text-5xl lg:text-6xl`}>Why choose us?</h2>
             <p className={`${SLATE} text-xl leading-relaxed`}>
-              We take you through business formation in the right order: choosing and registering the right structure
-              with your state, then setting up the professional identity a legitimate business needs. Every step is
-              clear, so you always know what comes next. We are committed to your success every step of the way.
+              You get a clear plan, in the right order. We help you form the right structure with your state, set up
+              the professional identity customers trust, and put automation in place so leads and appointments are
+              handled for you. Every step is explained plainly, so you always know what comes next.
             </p>
           </div>
         </section>
@@ -62,12 +62,12 @@ export default function AboutUs() {
         <section className={`bg-white border-t ${LINE} py-20 lg:py-28`}>
           <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             <h2 className={`${HEADLINE} ${NAVY} text-4xl lg:text-5xl`}>
-              We work with a broad range of businesses, from first-time founders to established owners getting their
+              Whether you're starting from an idea or already running your business, we'll help you get the
               foundation right.
             </h2>
             <p className={`${SLATE} text-lg leading-relaxed lg:pt-2`}>
-              Connect with us to learn more about how we can help you form and set up your business. We're ready to
-              help you with every step.
+              Book a consultation and tell us where your business is today. We'll help you see what comes next, and
+              walk with you every step of the way.
             </p>
           </div>
         </section>
