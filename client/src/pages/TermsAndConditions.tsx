@@ -22,6 +22,15 @@ const sections: LegalSection[] = [
     ),
   },
   {
+    heading: "Age requirement (18+)",
+    body: (
+      <p>
+        You must be at least 18 years old to use this website, book a consultation, or opt in to our text messages.
+        By using our website or services, you confirm that you are 18 or older.
+      </p>
+    ),
+  },
+  {
     heading: "Our services",
     body: (
       <>
@@ -66,7 +75,7 @@ const sections: LegalSection[] = [
         <p>
           <strong>How you opt in.</strong> You opt in by checking the optional text-message consent box on our{" "}
           <Link href={BOOK_PATH}>booking form</Link>. The box is not pre-checked. Consent is not a condition of booking
-          or of any purchase.
+          or of any purchase. You must be 18 or older to opt in.
         </p>
         <p>
           <strong>What we send.</strong> Appointment confirmations, reminders, and updates about your consultation. We
@@ -145,5 +154,5 @@ const sections: LegalSection[] = [
 ];
 
 export default function TermsAndConditions() {
-  return <LegalPage title="Terms & Conditions" lastUpdated="November 6, 2026" sections={sections} />;
+  return <LegalPage title="Terms & Conditions" lastUpdated="November 8, 2026" sections={sections} />;
 }
