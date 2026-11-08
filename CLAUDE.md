@@ -85,7 +85,8 @@ See README.md for the stack, deploy workflow and DNS.
   GoHighLevel's exact non-sharing sentences ("No mobile information will be
   shared..." / "...excluding aggregators and providers of the text message
   services."); the Terms have the SMS program terms (sender, opt-in checkbox,
-  message types, frequency, rates, STOP/START/HELP, carrier liability).
+  message types, frequency, rates, STOP/START/HELP, carrier liability, and
+  the 18+ age requirement, which GoHighLevel's compliance check requires).
   Shared layout: `client/src/components/LegalPage.tsx`. `/terms-of-service`
   redirects to `/terms-and-conditions`.
 - "Coming soon" placeholder: Resources. `/contact` redirects to Home. There is no Press page
