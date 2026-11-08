@@ -154,5 +154,5 @@ const sections: LegalSection[] = [
 ];
 
 export default function TermsAndConditions() {
-  return <LegalPage title="Terms & Conditions" lastUpdated="November 8, 2026" sections={sections} />;
+  return <LegalPage title="Terms & Conditions" lastUpdated="November 7, 2026" sections={sections} />;
 }
