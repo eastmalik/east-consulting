@@ -5,6 +5,6 @@ site to an image hosted on another company's platform.
 
 | File | Used for |
 | --- | --- |
-| `logo.svg` | Compass-rose logo (navbar, footer, browser tab) |
+| `logo.svg` | North-star logo with a blue aura (navbar, browser tab) |
 | `favicon-32.png` | Browser-tab icon fallback for older browsers |
-| `apple-touch-icon.png` | Icon when the site is saved to a phone home screen |
+| `apple-touch-icon.png` | Icon when the site is saved to a phone home screen (star on navy) |
