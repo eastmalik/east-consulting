@@ -100,8 +100,11 @@ See README.md for the stack, deploy workflow and DNS.
 - Content must stay business formation and business automation only: no
   credit, funding, capital, lending, tax or insurance content.
 - No chat widget and no 7Band family footer for now.
-- Colors: navy & white only. The gold compass logo and favicon are the only
-  gold. Button and card styles are in `client/src/index.css`
+- Logo (rebranded Nov 2026, owner's request): a north star with a blue
+  aura (`logo.svg`; white centre, blue tips, so it reads on white and navy).
+  favicon-32.png and apple-touch-icon.png (star on navy) are rendered from
+  it: regenerate them whenever logo.svg changes. The old gold compass is gone.
+- Colors: navy & white, plus the logo's blue. Button and card styles are in `client/src/index.css`
   (`ec-btn-navy`, `ec-btn-outline-navy` on white; `ec-btn-light`,
   `ec-btn-outline-light` on navy; `ec-card`).
 - The owner wants it simple: no photos unless they ask.
