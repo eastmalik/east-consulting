@@ -73,6 +73,14 @@ See README.md for the stack, deploy workflow and DNS.
   the calendar (malik-east-personal-calendar-70ch6hbpr); a link to the
   calendar sits under the form. Every "Book a Consultation" button on the site
   goes to `/book` (BOOK_PATH in `client/src/lib/site.ts`).
+- A2P 10DLC texting was APPROVED on November 9, 2026 (Customer Care use
+  case: appointment confirmations, reminders and updates). Keep the site
+  matching what was approved: the booking form checkbox, the Privacy Policy
+  SMS text and the Terms SMS terms. Sending marketing texts would need a new
+  campaign, not just a site change.
+- Arise Credit Pro footer: the owner wants to wait about 6 months after A2P
+  approval (so not before ~May 2027) and will ask. Don't add it, or any
+  credit content, before then.
 - The owner is doing texting (A2P 10DLC). The booking form is the site's
   ONLY SMS opt-in: an optional, unticked consent checkbox set up inside
   GoHighLevel. Don't add a second opt-in (e.g. the chat widget) on top of it
